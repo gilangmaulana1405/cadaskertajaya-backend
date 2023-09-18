@@ -13,15 +13,29 @@ class SuratKeteranganUsahaController extends Controller
         $nama = $request->nama;
         $ttl = $request->ttl;
         $jenis_kelamin = $request->jenis_kelamin;
+        $alamat = $request->alamat;
+        $agama = $request->agama;
+        $status_perkawinan = $request->status_perkawinan;
+        $pekerjaan = $request->pekerjaan;
+        $kewarganegaraan = $request->kewarganegaraan;
+        $nik = $request->nik;
+
+
+        $nama_usaha = $request->nama_usaha;
+        $jenis_usaha = $request->jenis_usaha;
+        $no_induk_usaha = $request->no_induk_usaha;
+        $tahun_usaha = $request->tahun_usaha;
+
 
         // format tgl
-        $date = Carbon::createFromTimestamp(time())->format('d-m-Y');
+        $date = Carbon::createFromTimestamp(time());
+        $dateString = $date->format('d F Y');
 
         // membuat nomor registrasi untuk nama file
         $registrationNumber = rand(1000, 999999);
 
         // membuat penamaan file agar tidak menimpa
-        $fileName = $registrationNumber . '_' . 'Surat Keterangan Usaha' . '_' . $nama . '_' . $date . '.docx';
+        $fileName = $registrationNumber . '_' . 'Surat Keterangan Usaha' . '_' . $nama . '_' . $dateString . '.docx';
 
         // membuat 3 angka pada nomor surat secara berurutan
         $nomorSurat = $request->session()->get('noSurat', 1);
@@ -46,6 +60,17 @@ class SuratKeteranganUsahaController extends Controller
             'nama' => $nama,
             'ttl' => $ttl,
             'jenis_kelamin' => $jenis_kelamin,
+            'alamat' => $alamat,
+            'agama' => $agama,
+            'status_perkawinan' => $status_perkawinan,
+            'pekerjaan' => $pekerjaan,
+            'kewarganegaraan' => $kewarganegaraan,
+            'nik' => $nik,
+            'nama_usaha' => $nama_usaha,
+            'jenis_usaha' => $jenis_usaha,
+            'no_induk_usaha' => $no_induk_usaha,
+            'tahun_usaha' => $tahun_usaha,
+            'created_at' => $dateString
         ];
 
         foreach ($templateData as $key => $value) {
