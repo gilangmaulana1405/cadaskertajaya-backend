@@ -4,25 +4,43 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\Models\SuratKeteranganUsaha;
 
 class SuratKeteranganUsahaController extends Controller
 {
     public function create(Request $request)
     {
-        // field input data
-        $nama = $request->nama;
-        $ttl = $request->ttl;
-        $jenis_kelamin = $request->jenis_kelamin;
-        $alamat = $request->alamat;
-        $agama = $request->agama;
-        $status_perkawinan = $request->status_perkawinan;
-        $pekerjaan = $request->pekerjaan;
-        $kewarganegaraan = $request->kewarganegaraan;
-        $nik = $request->nik;
 
-        $nama_usaha = $request->nama_usaha;
-        $jenis_usaha = $request->jenis_usaha;
-        $tahun_usaha = $request->tahun_usaha;
+        $data = new SuratKeteranganUsaha;
+        $data->nama =  $request->input('nama');
+        $data->ttl =  $request->input('ttl');
+        $data->jenis_kelamin =  $request->input('jenis_kelamin');
+        $data->alamat =  $request->input('alamat');
+        $data->agama =  $request->input('agama');
+        $data->status_perkawinan =  $request->input('status_perkawinan');
+        $data->pekerjaan =  $request->input('pekerjaan');
+        $data->kewarganegaraan =  $request->input('kewarganegaraan');
+        $data->nik =  $request->input('nik');
+        $data->nama_usaha =  $request->input('nama_usaha');
+        $data->jenis_usaha =  $request->input('jenis_usaha');
+        $data->tahun_usaha =  $request->input('tahun_usaha');
+        $data->save();
+
+
+        // field input data
+        // $nama = $request->nama;
+        // $ttl = $request->ttl;
+        // $jenis_kelamin = $request->jenis_kelamin;
+        // $alamat = $request->alamat;
+        // $agama = $request->agama;
+        // $status_perkawinan = $request->status_perkawinan;
+        // $pekerjaan = $request->pekerjaan;
+        // $kewarganegaraan = $request->kewarganegaraan;
+        // $nik = $request->nik;
+
+        // $nama_usaha = $request->nama_usaha;
+        // $jenis_usaha = $request->jenis_usaha;
+        // $tahun_usaha = $request->tahun_usaha;
 
 
         // format tgl
@@ -33,7 +51,7 @@ class SuratKeteranganUsahaController extends Controller
         $registrationNumber = rand(1000, 999999);
 
         // membuat penamaan file agar tidak menimpa
-        $fileName = $registrationNumber . '_' . 'Surat Keterangan Usaha' . '_' . $nama . '_' . $dateString . '.docx';
+        $fileName = $registrationNumber . '_' . 'Surat Keterangan Usaha' . '_' . $data->nama . '_' . $dateString . '.docx';
 
         // membuat 3 angka pada nomor surat secara berurutan
         $nomorSurat = $request->session()->get('noSurat', 1);
@@ -55,18 +73,18 @@ class SuratKeteranganUsahaController extends Controller
 
         $templateData = [
             'no_surat' => $no_surat,
-            'nama' => $nama,
-            'ttl' => $ttl,
-            'jenis_kelamin' => $jenis_kelamin,
-            'alamat' => $alamat,
-            'agama' => $agama,
-            'status_perkawinan' => $status_perkawinan,
-            'pekerjaan' => $pekerjaan,
-            'kewarganegaraan' => $kewarganegaraan,
-            'nik' => $nik,
-            'nama_usaha' => $nama_usaha,
-            'jenis_usaha' => $jenis_usaha,
-            'tahun_usaha' => $tahun_usaha,
+            'nama' => $data->nama,
+            'ttl' => $data->ttl,
+            'jenis_kelamin' => $data->jenis_kelamin,
+            'alamat' => $data->alamat,
+            'agama' => $data->agama,
+            'status_perkawinan' => $data->status_perkawinan,
+            'pekerjaan' => $data->pekerjaan,
+            'kewarganegaraan' => $data->kewarganegaraan,
+            'nik' => $data->nik,
+            'nama_usaha' => $data->nama_usaha,
+            'jenis_usaha' => $data->jenis_usaha,
+            'tahun_usaha' => $data->tahun_usaha,
             'created_at' => $dateString
         ];
 
