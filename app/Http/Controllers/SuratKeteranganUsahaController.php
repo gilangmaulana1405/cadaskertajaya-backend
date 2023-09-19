@@ -20,10 +20,8 @@ class SuratKeteranganUsahaController extends Controller
         $kewarganegaraan = $request->kewarganegaraan;
         $nik = $request->nik;
 
-
         $nama_usaha = $request->nama_usaha;
         $jenis_usaha = $request->jenis_usaha;
-        $no_induk_usaha = $request->no_induk_usaha;
         $tahun_usaha = $request->tahun_usaha;
 
 
@@ -43,7 +41,7 @@ class SuratKeteranganUsahaController extends Controller
         $request->session()->put('noSurat', $nomorSurat + 1);
 
         // membuat format nomor surat
-        $no_surat = $nomorSuratString . '/ ' .  preg_replace('/\s+/', '  ', '') . ' /' . 'IX-2023' . '/' . 'Ds.';
+        $no_surat = '510' . '/' . $nomorSuratString . '/' . 'IX-2023' . '/' . 'Ds.';
 
         // Path ke templat Word
         $templatePath = public_path('SuratKeteranganUsaha.docx');
@@ -68,7 +66,6 @@ class SuratKeteranganUsahaController extends Controller
             'nik' => $nik,
             'nama_usaha' => $nama_usaha,
             'jenis_usaha' => $jenis_usaha,
-            'no_induk_usaha' => $no_induk_usaha,
             'tahun_usaha' => $tahun_usaha,
             'created_at' => $dateString
         ];
