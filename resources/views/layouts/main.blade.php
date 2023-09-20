@@ -162,7 +162,8 @@
 </script>
 
 
-<!-- modal -->
+<!-- Modals -->
+
 <!-- Modal SKU -->
 <div class="modal fade" id="ModelSKU" role="dialog">
     <div class="modal-dialog">
@@ -306,7 +307,20 @@
                     </div>
                     <div class="form-group">
                         <label for="inputHari">Hari</label>
-                        <input type="text" class="form-control" id="inputHari" placeholder="Masukan hari" />
+                        <select class="form-select" name="hari" aria-label="Default select example">
+                            <option value="Senin">Senin</option>
+                            <option value="Selasa">Selasa</option>
+                            <option value="Rabu">Rabu</option>
+                            <option value="Kamis">Kamis</option>
+                            <option value="Jumat">Jumat</option>
+                            <option value="Sabtu">Sabtu</option>
+                            <option value="Minggu">Minggu</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="inputTanggal">Tanggal</label>
+                        <input type="text" class="form-control" id="inputTanggal" placeholder="Masukan tanggal" />
                     </div>
                     <div class="form-group">
                         <label for="inputPukul">Pukul</label>
@@ -341,7 +355,7 @@
                         <input type="text" class="form-control" id="inputPekerjaan" placeholder="Masukan pekerjaan" />
                     </div>
                     <div class="form-group">
-                        <label for="inputAlamat">Alamat KTP</label>
+                        <label for="inputAlamat">Alamat</label>
                         <input type="text" class="form-control" id="inputAlamat" placeholder="Masukan alamat" />
                     </div>
                     <div class="form-group">
@@ -360,6 +374,82 @@
     </div>
 </div>
 <!-- End Modal SKM -->
+
+<!-- Modal SKTM -->
+<div class="modal fade" id="ModelSKTM" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h2>Formulir SKTM</h2>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <p class="statusMsg"></p>
+                <form role="form">
+                    <div>
+                        <h4>Yang bertanda tangan dibawah ini, menerangkan bahwa:</h4>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputNama">Nama</label>
+                        <input type="text" class="form-control" name="nama" id="inputNama" placeholder="Masukan nama" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputTtl">Tempat/Tanggal Lahir</label>
+                        <input type="text" class="form-control" name="ttl" id="inputTtl" placeholder="cth: Karawang, 01 Januari 2002" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputJeniskelamin">Jenis Kelamin</label>
+                        <select class="form-select" name="jenis_kelamin" aria-label="Default select example">
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAlamat">Alamat</label>
+                        <input type="text" class="form-control" name="alamat" id="inputAlamat" placeholder="Masukan alamat" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAgama">Agama</label>
+                        <input type="text" class="form-control" name="agama" id="inputAgama" placeholder="Masukan agama" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputStatusperkawinan">Status Perkawinan</label>
+                        <select class="form-select" name="status_perkawinan" aria-label="Default select example">
+                            <option value="Belum Menikah">Belum Menikah</option>
+                            <option value="Menikah">Menikah</option>
+                            <option value="Cerai">Cerai</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPekerjaan">Pekerjaan</label>
+                        <input type="text" class="form-control" name="pekerjaan" id="inputPekerjaan" placeholder="Masukan pekerjaan" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputKewarganegaraan">Kewarganegaraan</label>
+                        <input type="text" class="form-control" name="kewarganegaraan" id="inputKewarganegaraan" placeholder="Masukan kewarganegaraan" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputNik">NIK</label>
+                        <input type="text" class="form-control numeric-input" name="nik" id="inputNik" placeholder="Masukan NIK" required />
+                    </div>
+                </form>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">SUBMIT</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal SKTM -->
 
 <!-- Modal SK Domisili-->
 <div class="modal fade" id="ModelSKdomisili" role="dialog">
