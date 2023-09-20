@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PenggunaanController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SuratKeteranganUsahaController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,16 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/penggunaan',function(){
-    return view('penggunaan');
-});
-
-Route::post('/penggunaan', [PenggunaanController::class, 'index'])->name('penggunaan.index');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // sku
-Route::get('/sku',function(){
-    return view('sku');
-});
-
 Route::post('/sku', [SuratKeteranganUsahaController::class, 'create'])->name('sku.create');
 

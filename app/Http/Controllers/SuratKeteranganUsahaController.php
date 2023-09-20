@@ -8,9 +8,9 @@ use App\Models\SuratKeteranganUsaha;
 
 class SuratKeteranganUsahaController extends Controller
 {
+
     public function create(Request $request)
     {
-
         $data = new SuratKeteranganUsaha;
         $data->nama =  $request->input('nama');
         $data->ttl =  $request->input('ttl');
@@ -24,23 +24,8 @@ class SuratKeteranganUsahaController extends Controller
         $data->nama_usaha =  $request->input('nama_usaha');
         $data->jenis_usaha =  $request->input('jenis_usaha');
         $data->tahun_usaha =  $request->input('tahun_usaha');
+        $data->lokasi_usaha =  $request->input('lokasi_usaha');
         $data->save();
-
-
-        // field input data
-        // $nama = $request->nama;
-        // $ttl = $request->ttl;
-        // $jenis_kelamin = $request->jenis_kelamin;
-        // $alamat = $request->alamat;
-        // $agama = $request->agama;
-        // $status_perkawinan = $request->status_perkawinan;
-        // $pekerjaan = $request->pekerjaan;
-        // $kewarganegaraan = $request->kewarganegaraan;
-        // $nik = $request->nik;
-
-        // $nama_usaha = $request->nama_usaha;
-        // $jenis_usaha = $request->jenis_usaha;
-        // $tahun_usaha = $request->tahun_usaha;
 
 
         // format tgl
@@ -85,6 +70,7 @@ class SuratKeteranganUsahaController extends Controller
             'nama_usaha' => $data->nama_usaha,
             'jenis_usaha' => $data->jenis_usaha,
             'tahun_usaha' => $data->tahun_usaha,
+            'lokasi_usaha' => $data->lokasi_usaha,
             'created_at' => $dateString
         ];
 

@@ -28,7 +28,8 @@ return new class extends Migration
             // data usaha
             $table->string('nama_usaha');
             $table->string('jenis_usaha');
-            $table->bigInteger('tahun_usaha');
+            $table->integer('tahun_usaha');
+            $table->string('lokasi_usaha');
 
             $table->timestamps();
         });
