@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\SuratKeteranganUsaha;
+use Illuminate\Support\Facades\Session;
 
 class SuratKeteranganUsahaController extends Controller
 {
@@ -12,6 +13,7 @@ class SuratKeteranganUsahaController extends Controller
     public function create(Request $request)
     {
         $data = new SuratKeteranganUsaha;
+        $data->id = $request->input('id');
         $data->nama =  $request->input('nama');
         $data->ttl =  $request->input('ttl');
         $data->jenis_kelamin =  $request->input('jenis_kelamin');
@@ -39,12 +41,21 @@ class SuratKeteranganUsahaController extends Controller
         $fileName = $registrationNumber . '_' . 'Surat Keterangan Usaha' . '_' . $data->nama . '_' . $dateString . '.docx';
 
         // membuat 3 angka pada nomor surat secara berurutan
-        $nomorSurat = $request->session()->get('noSurat', 1);
-        $nomorSuratString = str_pad($nomorSurat, 3, '0', STR_PAD_LEFT);
-        $request->session()->put('noSurat', $nomorSurat + 1);
+        // $nomorSurat = $request->session()->get('noSurat', 1);
+        // $nomorSuratString = str_pad($nomorSurat, 3, '0', STR_PAD_LEFT);
+        // $request->session()->put('noSurat', $nomorSurat + 1);
+
+        $id = SuratKeteranganUsaha::find($data->id);
+
+        if (!$id) {
+            abort(404); // Menampilkan halaman 404 jika ID tidak ditemukan
+        }
+
+        $nomorSurat = str_pad($id->id, 3, '0', STR_PAD_LEFT);
+
 
         // membuat format nomor surat
-        $no_surat = '510' . '/' . $nomorSuratString . '/' . 'IX-2023' . '/' . 'Ds.';
+        $no_surat = '510' . '/' . $nomorSurat . '/' . 'IX-2023' . '/' . 'Ds.';
 
         // Path ke templat Word
         $templatePath = public_path('SuratKeteranganUsaha.docx');
