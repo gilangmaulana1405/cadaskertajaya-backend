@@ -41,18 +41,9 @@ class SuratKeteranganUsahaController extends Controller
         $fileName = $registrationNumber . '_' . 'Surat Keterangan Usaha' . '_' . $data->nama . '_' . $dateString . '.docx';
 
         // membuat 3 angka pada nomor surat secara berurutan
-        // $nomorSurat = $request->session()->get('noSurat', 1);
-        // $nomorSuratString = str_pad($nomorSurat, 3, '0', STR_PAD_LEFT);
-        // $request->session()->put('noSurat', $nomorSurat + 1);
-
         $id = SuratKeteranganUsaha::find($data->id);
 
-        if (!$id) {
-            abort(404); // Menampilkan halaman 404 jika ID tidak ditemukan
-        }
-
         $nomorSurat = str_pad($id->id, 3, '0', STR_PAD_LEFT);
-
 
         // membuat format nomor surat
         $no_surat = '510' . '/' . $nomorSurat . '/' . 'IX-2023' . '/' . 'Ds.';
