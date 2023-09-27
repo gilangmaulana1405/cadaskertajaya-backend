@@ -6,6 +6,8 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\SuratKeteranganUsaha;
 use Illuminate\Support\Facades\Session;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class SuratKeteranganUsahaController extends Controller
 {
@@ -81,7 +83,7 @@ class SuratKeteranganUsahaController extends Controller
         }
 
         $phpWord->saveAs($outputPath);
-
+        
         return response()->download($outputPath)->deleteFileAfterSend(true);
     }
 }

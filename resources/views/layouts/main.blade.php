@@ -137,6 +137,8 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
 </script>
@@ -145,24 +147,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
 </script>
 
-
-<!-- untuk membuat inputan hanya angka -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        let inputFields = document.querySelectorAll('.numeric-input');
-
-        inputFields.forEach(function(input) {
-            input.addEventListener("input", function() {
-                // Hapus karakter selain angka
-                this.value = this.value.replace(/\D/g, '');
-            });
-        });
-    });
-
-</script>
-
-
-<!-- Modals -->
 
 <!-- Modal SKU -->
 <div class="modal fade" id="ModelSKU" role="dialog">
@@ -178,9 +162,9 @@
             </div>
 
             <!-- Modal Body -->
-            <div class="modal-body">
-                <p class="statusMsg"></p>
-                <form action="{{ route('sku.create') }}" method="POST">
+            <form action="{{ route('sku.create') }}" method="POST">
+                <div class="modal-body">
+                    <p class="statusMsg"></p>
                     @csrf
                     <div>
                         <h4>Data Pemilik Usaha</h4>
@@ -248,14 +232,14 @@
                         <label for="inputLokasi">Lokasi Usaha</label>
                         <input type="text" class="form-control" name="lokasi_usaha" id="inputLokasi" placeholder="Masukan lokasi usaha" required />
                     </div>
-            </div>
+                </div>
 
-            <!-- Modal Footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary submitBtn">SUBMIT</button>
-                </form>
-            </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary submitBtn">SUBMIT</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -492,5 +476,42 @@
     </div>
 </div>
 <!-- End Modal SK Domisili -->
+
+<!-- untuk membuat inputan hanya angka -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let inputFields = document.querySelectorAll('.numeric-input');
+
+        inputFields.forEach(function(input) {
+            input.addEventListener("input", function() {
+                // Hapus karakter selain angka
+                this.value = this.value.replace(/\D/g, '');
+            });
+        });
+    });
+
+</script>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        Swal.fire({
+            title: 'Success'
+            , text: 'Data berhasil ditambahkan, file Word siap untuk diunduh!'
+            , icon: 'success'
+        , }).then(() => {
+            // Setelah pengguna menekan OK, kirimkan formulir
+            this.submit();
+            $('#ModelSKU').hide();
+            setTimeout(function() {
+                window.location.reload();
+            }, 2000);
+
+        });
+
+    });
+
+</script>
 
 </html>

@@ -19,5 +19,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // sku
-Route::post('/sku', [SuratKeteranganUsahaController::class, 'create'])->name('sku.create');
+Route::post('/', [SuratKeteranganUsahaController::class, 'create'])->name('sku.create');
 
