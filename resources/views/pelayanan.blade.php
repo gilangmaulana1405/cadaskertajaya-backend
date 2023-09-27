@@ -36,7 +36,7 @@
                 <div class="course-item">
                     <img src="assets/img/SKTM.png" class="img-fluid" alt="..." />
                     <div class="course-content">
-                        <h3><a data-toggle="modal" data-target="#ModelSKM">SKM (Surat Keterangan Tidak Mampu)</a>
+                        <h3><a data-toggle="modal" data-target="#ModelSKTM">SKTM (Surat Keterangan Tidak Mampu)</a>
                         </h3>
                         <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae
                             dolores dolorem
