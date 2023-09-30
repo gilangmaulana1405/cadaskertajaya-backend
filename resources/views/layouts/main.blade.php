@@ -14,9 +14,7 @@
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
@@ -59,8 +57,7 @@
                             <li><a href="peta_desa.html">Peta Desa</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="#"><span>Kelembagaan Desa</span> <i
-                                class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a href="#"><span>Kelembagaan Desa</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="#">Drop Down 1</a></li>
                             <li><a href="#">Drop Down 2</a></li>
@@ -129,8 +126,7 @@
     <!-- End Footer -->
 
     <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/purecounter/purecounter.js"></script>
@@ -144,14 +140,11 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
 </script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
 </script>
 
 
@@ -169,7 +162,7 @@
             </div>
 
             <!-- Modal Body -->
-            <form action="{{ route('sku.create') }}" method="POST">
+            <form action="{{ route('sku.create') }}" method="POST" id="formSKU">
                 <div class="modal-body">
                     <p class="statusMsg"></p>
                     @csrf
@@ -178,13 +171,11 @@
                     </div>
                     <div class="form-group">
                         <label for="inputNama">Nama</label>
-                        <input type="text" class="form-control" name="nama" id="inputNama" placeholder="Masukan nama"
-                            required />
+                        <input type="text" class="form-control alphabet-input" name="nama" id="inputNama" placeholder="Masukan nama" required />
                     </div>
                     <div class="form-group">
                         <label for="inputTtl">Tempat/Tanggal Lahir</label>
-                        <input type="text" class="form-control" name="ttl" id="inputTtl"
-                            placeholder="cth: Karawang, 01 Januari 2002" required />
+                        <input type="text" class="form-control" name="ttl" id="inputTtl" placeholder="cth: Karawang, 01 Januari 2002" required />
                     </div>
                     <div class="form-group">
                         <label for="inputJeniskelamin">Jenis Kelamin</label>
@@ -195,8 +186,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputAlamat">Alamat</label>
-                        <input type="text" class="form-control" name="alamat" id="inputAlamat"
-                            placeholder="Masukan alamat" required />
+                        <input type="text" class="form-control" name="alamat" id="inputAlamat" placeholder="Masukan alamat" required />
                     </div>
                     <div class="form-group">
                         <label for="inputAgama">Agama</label>
@@ -219,8 +209,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputPekerjaan">Pekerjaan</label>
-                        <input type="text" class="form-control" name="pekerjaan" id="inputPekerjaan"
-                            placeholder="Cth: Wiraswasta" required />
+                        <input type="text" class="form-control" name="pekerjaan" id="inputPekerjaan" placeholder="Cth: Wiraswasta" required />
                     </div>
                     <div class="form-group">
                         <label for="inputKewarganegaraan">Kewarganegaraan</label>
@@ -231,8 +220,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputNik">NIK</label>
-                        <input type="text" class="form-control numeric-input" name="nik" id="inputNik"
-                            placeholder="Masukan NIK" required />
+                        <input type="text" class="form-control numeric-input" name="nik" id="inputNik" placeholder="Masukan NIK" required />
                     </div>
                     <div>
                         <br>
@@ -240,30 +228,26 @@
                     </div>
                     <div class="form-group">
                         <label for="inputTahunUsaha">Tahun Awal Usaha</label>
-                        <input type="text" class="form-control numeric-input" name="tahun_usaha" id="inputTahunUsaha"
-                            placeholder="Masukan tahun awal usaha" required />
+                        <input type="text" class="form-control numeric-input" name="tahun_usaha" id="inputTahunUsaha" placeholder="Masukan tahun awal usaha" required />
                     </div>
                     <div class="form-group">
                         <label for="inputNamausaha">Nama Usaha</label>
-                        <input type="text" class="form-control" name="nama_usaha" id="inputNamausaha"
-                            placeholder="Masukan nama usaha" required />
+                        <input type="text" class="form-control" name="nama_usaha" id="inputNamausaha" placeholder="Masukan nama usaha" required />
                     </div>
                     <div class="form-group">
                         <label for="inputJenisusaha">Jenis Usaha</label>
-                        <input type="text" class="form-control" name="jenis_usaha" id="inputJenisusaha"
-                            placeholder="Masukan jenis usaha" required />
+                        <input type="text" class="form-control" name="jenis_usaha" id="inputJenisusaha" placeholder="Masukan jenis usaha" required />
                     </div>
                     <div class="form-group">
                         <label for="inputLokasi">Lokasi Usaha</label>
-                        <input type="text" class="form-control" name="lokasi_usaha" id="inputLokasi"
-                            placeholder="Masukan lokasi usaha" required />
+                        <input type="text" class="form-control" name="lokasi_usaha" id="inputLokasi" placeholder="Masukan lokasi usaha" required />
                     </div>
                 </div>
 
                 <!-- Modal Footer -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary submitBtn">SUBMIT</button>
+                    <button type="submit" class="btn btn-primary">SUBMIT</button>
                 </div>
             </form>
         </div>
@@ -338,13 +322,11 @@
                     </div>
                     <div class="form-group">
                         <label for="inputTempatkematian">Tempat Kematian</label>
-                        <input type="text" class="form-control" id="inputTempatkematian"
-                            placeholder="Masukan tempat kematian" />
+                        <input type="text" class="form-control" id="inputTempatkematian" placeholder="Masukan tempat kematian" />
                     </div>
                     <div class="form-group">
                         <label for="inputPenyebabkematian">Penyebab Kematian</label>
-                        <input type="text" class="form-control" id="inputPenyebabkematian"
-                            placeholder="Masukan penyebab kematian" />
+                        <input type="text" class="form-control" id="inputPenyebabkematian" placeholder="Masukan penyebab kematian" />
                     </div>
                     <div>
                         <br>
@@ -372,8 +354,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputHubungan">Hubungan Pelapor Dengan Yang Meninggal Dunia</label>
-                        <input type="text" class="form-control" id="inputHubungan"
-                            placeholder="Masukan hubungan pelapor dengan yang meninggal dunia" />
+                        <input type="text" class="form-control" id="inputHubungan" placeholder="Masukan hubungan pelapor dengan yang meninggal dunia" />
                     </div>
                 </form>
             </div>
@@ -403,20 +384,19 @@
 
             <!-- Modal Body -->
             <div class="modal-body">
-                <p class="statusMsg"></p>
-                <form role="form">
+                <form action="{{ route('sktm.create') }}" method="POST" id="formSKTM">
+                    @csrf
+                    <p class="statusMsg"></p>
                     <div>
                         <h4>Yang bertanda tangan dibawah ini, menerangkan bahwa:</h4>
                     </div>
                     <div class="form-group">
                         <label for="inputNama">Nama</label>
-                        <input type="text" class="form-control" name="nama" id="inputNama" placeholder="Masukan nama"
-                            required />
+                        <input type="text" class="form-control alphabet-input" name="nama" id="inputNama" placeholder="Masukan nama" required />
                     </div>
                     <div class="form-group">
                         <label for="inputTtl">Tempat/Tanggal Lahir</label>
-                        <input type="text" class="form-control" name="ttl" id="inputTtl"
-                            placeholder="cth: Karawang, 01 Januari 2002" required />
+                        <input type="text" class="form-control" name="ttl" id="inputTtl" placeholder="cth: Karawang, 01 Januari 2002" required />
                     </div>
                     <div class="form-group">
                         <label for="inputJeniskelamin">Jenis Kelamin</label>
@@ -427,13 +407,18 @@
                     </div>
                     <div class="form-group">
                         <label for="inputAlamat">Alamat</label>
-                        <input type="text" class="form-control" name="alamat" id="inputAlamat"
-                            placeholder="Masukan alamat" required />
+                        <input type="text" class="form-control" name="alamat" id="inputAlamat" placeholder="Masukan alamat" required />
                     </div>
                     <div class="form-group">
                         <label for="inputAgama">Agama</label>
-                        <input type="text" class="form-control" name="agama" id="inputAgama" placeholder="Masukan agama"
-                            required />
+                        <select class="form-select" name="agama">
+                            <option value="Islam">Islam</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Katholik">Katholik</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Buddha">Buddha</option>
+                            <option value="Konghucu">Konghucu</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="inputStatusperkawinan">Status Perkawinan</label>
@@ -445,27 +430,27 @@
                     </div>
                     <div class="form-group">
                         <label for="inputPekerjaan">Pekerjaan</label>
-                        <input type="text" class="form-control" name="pekerjaan" id="inputPekerjaan"
-                            placeholder="Masukan pekerjaan" required />
+                        <input type="text" class="form-control" name="pekerjaan" id="inputPekerjaan" placeholder="Cth: Wiraswasta" required />
                     </div>
                     <div class="form-group">
                         <label for="inputKewarganegaraan">Kewarganegaraan</label>
-                        <input type="text" class="form-control" name="kewarganegaraan" id="inputKewarganegaraan"
-                            placeholder="Masukan kewarganegaraan" required />
+                        <select class="form-select" name="kewarganegaraan">
+                            <option value="WNI">WNI</option>
+                            <option value="WNA">WNA</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="inputNik">NIK</label>
-                        <input type="text" class="form-control numeric-input" name="nik" id="inputNik"
-                            placeholder="Masukan NIK" required />
+                        <input type="text" class="form-control numeric-input" name="nik" id="inputNikSKTM" placeholder="Masukan NIK" required />
                     </div>
-                </form>
             </div>
 
             <!-- Modal Footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">SUBMIT</button>
+                <button type="submit" class="btn btn-primary">SUBMIT</button>
             </div>
+            </form>
         </div>
     </div>
 </div>
@@ -517,10 +502,10 @@
 <!-- membuat inputan max 16 & 4 angka untuk field NIK dan Tahun Usaha -->
 <script>
     let inputElementNik = document.getElementById("inputNik");
+    let inputElementNikSKTM = document.getElementById("inputNikSKTM");
     let inputElementTahunUsaha = document.getElementById("inputTahunUsaha");
 
-
-    inputElementNik.addEventListener("input", function () {
+    inputElementNik.addEventListener("input", function() {
         let inputValueNik = inputElementNik.value;
 
         // Hapus karakter yang tidak valid
@@ -535,7 +520,22 @@
         inputElementNik.value = validValueNik;
     });
 
-    inputElementTahunUsaha.addEventListener("input", function () {
+    inputElementNikSKTM.addEventListener("input", function() {
+        let inputValueNik = inputElementNikSKTM.value;
+
+        // Hapus karakter yang tidak valid
+        let validValueNik = inputValueNik.replace(/[^0-9]/g, '');
+
+        // Batasi panjang string menjadi 4 karakter
+        if (validValueNik.length > 16) {
+            validValueNik = validValueNik.slice(0, 16);
+        }
+
+        // Setel nilai input dengan string yang sudah valid
+        inputElementNikSKTM.value = validValueNik;
+    });
+
+    inputElementTahunUsaha.addEventListener("input", function() {
         let inputValueTahunUsaha = inputElementTahunUsaha.value;
 
         // Hapus karakter yang tidak valid
@@ -554,11 +554,11 @@
 
 <!-- untuk membuat inputan hanya angka -->
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
         let inputFields = document.querySelectorAll('.numeric-input');
 
-        inputFields.forEach(function (input) {
-            input.addEventListener("input", function () {
+        inputFields.forEach(function(input) {
+            input.addEventListener("input", function() {
                 // Hapus karakter selain angka
                 this.value = this.value.replace(/\D/g, '');
             });
@@ -567,25 +567,65 @@
 
 </script>
 
+<!-- inputan hanya huruf dan spasi -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let inputFields = document.querySelectorAll('.alphabet-input');
+
+        inputFields.forEach(function(input) {
+            input.addEventListener("input", function() {
+                // Hapus karakter selain angka
+                this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+            });
+        });
+    });
+
+    // let inputElement = document.getElementById("inputNama");
+
+    // // Menambahkan event listener pada input
+    // inputElement.addEventListener("input", function () {
+    //     // Menghapus karakter selain huruf dari input
+    //     inputElement.value = inputElement.value.replace(/[^a-zA-Z\s]/g, '');
+    // });
+
+</script>
+
 <!-- untuk membuat sweetalert dan download word otomatis lalu refresh halaman 2 detik -->
 <script>
-    document.querySelector('form').addEventListener('submit', function (e) {
+    document.getElementById('formSKU').addEventListener('submit', function(e) {
         e.preventDefault();
 
         Swal.fire({
-            title: 'Success',
-            text: 'Data berhasil ditambahkan, file Word siap untuk diunduh!',
-            icon: 'success',
-        }).then(() => {
+            title: 'Success'
+            , text: 'Data berhasil ditambahkan, file Word siap untuk diunduh!'
+            , icon: 'success'
+        , }).then(() => {
             // Setelah pengguna menekan OK, kirimkan formulir
             this.submit();
             $('#ModelSKU').hide();
-            setTimeout(function () {
+            setTimeout(function() {
                 window.location.reload();
             }, 2000);
 
         });
+    });
 
+    document.getElementById('formSKTM').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        Swal.fire({
+            title: 'Success'
+            , text: 'Data berhasil ditambahkan, file Word siap untuk diunduh!'
+            , icon: 'success'
+        , }).then(() => {
+            // Setelah pengguna menekan OK, kirimkan formulir
+            this.submit();
+            $('#ModelSKTM').hide();
+            setTimeout(function() {
+                window.location.reload();
+            }, 2000);
+
+        });
     });
 
 </script>

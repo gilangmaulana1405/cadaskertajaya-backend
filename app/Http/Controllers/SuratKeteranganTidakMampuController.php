@@ -2,22 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
+use App\Models\SuratKeteranganTidakMampu;
 use Illuminate\Http\Request;
-use App\Models\SuratKeteranganUsaha;
+use Carbon\Carbon;
 
-
-class SuratKeteranganUsahaController extends Controller
+class SuratKeteranganTidakMampuController extends Controller
 {
-
-
-    public function index(){
+   public function index(){
         return view('index');
     }
 
-    public function create(Request $request)
+     public function create(Request $request)
     {
-        $data = new SuratKeteranganUsaha;
+        $data = new SuratKeteranganTidakMampu();
         $data->id = $request->input('id');
         $data->nama =  $request->input('nama');
         $data->ttl =  $request->input('ttl');
@@ -28,10 +25,6 @@ class SuratKeteranganUsahaController extends Controller
         $data->pekerjaan =  $request->input('pekerjaan');
         $data->kewarganegaraan =  $request->input('kewarganegaraan');
         $data->nik =  $request->input('nik');
-        $data->nama_usaha =  $request->input('nama_usaha');
-        $data->jenis_usaha =  $request->input('jenis_usaha');
-        $data->tahun_usaha =  $request->input('tahun_usaha');
-        $data->lokasi_usaha =  $request->input('lokasi_usaha');
         $data->save();
 
 
@@ -43,18 +36,18 @@ class SuratKeteranganUsahaController extends Controller
         $registrationNumber = rand(1000, 999999);
 
         // membuat penamaan file agar tidak menimpa
-        $fileName = $registrationNumber . '_' . 'Surat Keterangan Usaha' . '_' . $data->nama . '_' . $dateString . '.docx';
+        $fileName = $registrationNumber . '_' . 'Surat Keterangan Tidak Mampu' . '_' . $data->nama . '_' . $dateString . '.docx';
 
         // membuat 3 angka pada nomor surat secara berurutan
-        $id = SuratKeteranganUsaha::find($data->id);
+        $id = SuratKeteranganTidakMampu::find($data->id);
 
         $nomorSurat = str_pad($id->id, 3, '0', STR_PAD_LEFT);
 
         // membuat format nomor surat
-        $no_surat = '510' . '/' . $nomorSurat . '/' . 'IX-2023' . '/' . 'Ds.';
+        $no_surat = '470' . '/' . $nomorSurat . '/' . 'VII-2023' . '/' . 'Ds.';
 
         // Path ke templat Word
-        $templatePath = public_path('SuratKeteranganUsaha.docx');
+        $templatePath = public_path('SuratKeteranganTidakMampu.docx');
 
         // Path untuk menyimpan file hasil
         $outputPath = public_path($fileName);
@@ -74,10 +67,6 @@ class SuratKeteranganUsahaController extends Controller
             'pekerjaan' => $data->pekerjaan,
             'kewarganegaraan' => $data->kewarganegaraan,
             'nik' => $data->nik,
-            'nama_usaha' => $data->nama_usaha,
-            'jenis_usaha' => $data->jenis_usaha,
-            'tahun_usaha' => $data->tahun_usaha,
-            'lokasi_usaha' => $data->lokasi_usaha,
             'created_at' => $dateString
         ];
 
@@ -89,4 +78,5 @@ class SuratKeteranganUsahaController extends Controller
         
         return response()->download($outputPath)->deleteFileAfterSend(true);
     }
+
 }
