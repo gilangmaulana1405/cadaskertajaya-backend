@@ -3,6 +3,8 @@
 use App\Http\Controllers\PenggunaanController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SuratKeteranganUsahaController;
+use App\Http\Controllers\SuratKeteranganTidakMampuController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,5 +21,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // sku
-Route::post('/', [SuratKeteranganUsahaController::class, 'create'])->name('sku.create');
+Route::get('/sku', [SuratKeteranganUsahaController::class, 'index']);
+Route::post('/sku', [SuratKeteranganUsahaController::class, 'create'])->name('sku.create');
+
+// sktm
+Route::get('/sktm', [SuratKeteranganTidakMampuController::class, 'index']);
+Route::post('/sktm', [SuratKeteranganTidakMampuController::class, 'create'])->name('sktm.create');
 
