@@ -155,10 +155,7 @@
             <!-- Modal Header -->
             <div class="modal-header">
                 <h2>Formulir SKU</h2>
-                <button type="button" class="close" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Close</span>
-                </button>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
 
             <!-- Modal Body -->
@@ -253,7 +250,6 @@
         </div>
     </div>
 </div>
-<!-- End Modal SKU -->
 
 <!-- Modal SKM -->
 <div class="modal fade" id="ModelSKM" role="dialog">
@@ -367,7 +363,6 @@
         </div>
     </div>
 </div>
-<!-- End Modal SKM -->
 
 <!-- Modal SKTM -->
 <div class="modal fade" id="ModelSKTM" role="dialog">
@@ -376,10 +371,7 @@
             <!-- Modal Header -->
             <div class="modal-header">
                 <h2>Formulir SKTM</h2>
-                <button type="button" class="close" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Close</span>
-                </button>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
 
             <!-- Modal Body -->
@@ -454,7 +446,6 @@
         </div>
     </div>
 </div>
-<!-- End Modal SKTM -->
 
 <!-- Modal SK Domisili-->
 <div class="modal fade" id="ModelSKdomisili" role="dialog">
@@ -496,13 +487,99 @@
         </div>
     </div>
 </div>
-<!-- End Modal SK Domisili -->
+
+<!-- Modal SKD Belum Menikah -->
+<div class="modal fade" id="ModelSKDBelumMenikah" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h2>Formulir SKD Belum Menikah</h2>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <form action="{{ route('skdbelummenikah.create') }}" method="POST" id="formSKDBelumMenikah">
+                    @csrf
+                    <p class="statusMsg"></p>
+                    <div>
+                        <h4>Yang bertanda tangan dibawah ini, menerangkan bahwa:</h4>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputNama">Nama</label>
+                        <input type="text" class="form-control alphabet-input" name="nama" id="inputNama" placeholder="Masukan nama" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputTtl">Tempat/Tanggal Lahir</label>
+                        <input type="text" class="form-control" name="ttl" id="inputTtl" placeholder="cth: Karawang, 01 Januari 2002" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputJeniskelamin">Jenis Kelamin</label>
+                        <select class="form-select" name="jenis_kelamin" aria-label="Default select example">
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAlamat">Alamat</label>
+                        <input type="text" class="form-control" name="alamat" id="inputAlamat" placeholder="Masukan alamat" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAgama">Agama</label>
+                        <select class="form-select" name="agama">
+                            <option value="Islam">Islam</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Katholik">Katholik</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Buddha">Buddha</option>
+                            <option value="Konghucu">Konghucu</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputStatusperkawinan">Status Perkawinan</label>
+                        <select class="form-select" name="status_perkawinan" aria-label="Default select example">
+                            <option value="Belum Menikah">Belum Menikah</option>
+                            <option value="Menikah">Menikah</option>
+                            <option value="Cerai">Cerai</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPekerjaan">Pekerjaan</label>
+                        <input type="text" class="form-control" name="pekerjaan" id="inputPekerjaan" placeholder="Cth: Wiraswasta" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputKewarganegaraan">Kewarganegaraan</label>
+                        <select class="form-select" name="kewarganegaraan">
+                            <option value="WNI">WNI</option>
+                            <option value="WNA">WNA</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputNik">NIK</label>
+                        <input type="text" class="form-control numeric-input" name="nik" id="inputNikSKDBelumMenikah" placeholder="Masukan NIK" required />
+
+                    </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">SUBMIT</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 
 
 <!-- membuat inputan max 16 & 4 angka untuk field NIK dan Tahun Usaha -->
 <script>
     let inputElementNik = document.getElementById("inputNik");
     let inputElementNikSKTM = document.getElementById("inputNikSKTM");
+    let inputElementNikSKDBelumMenikah = document.getElementById("inputNikSKDBelumMenikah");
     let inputElementTahunUsaha = document.getElementById("inputTahunUsaha");
 
     inputElementNik.addEventListener("input", function() {
@@ -533,6 +610,21 @@
 
         // Setel nilai input dengan string yang sudah valid
         inputElementNikSKTM.value = validValueNik;
+    });
+
+    inputElementNikSKDBelumMenikah.addEventListener("input", function() {
+        let inputValueNik = inputElementNikSKDBelumMenikah.value;
+
+        // Hapus karakter yang tidak valid
+        let validValueNik = inputValueNik.replace(/[^0-9]/g, '');
+
+        // Batasi panjang string menjadi 4 karakter
+        if (validValueNik.length > 16) {
+            validValueNik = validValueNik.slice(0, 16);
+        }
+
+        // Setel nilai input dengan string yang sudah valid
+        inputElementNikSKDBelumMenikah.value = validValueNik;
     });
 
     inputElementTahunUsaha.addEventListener("input", function() {
@@ -621,6 +713,24 @@
             // Setelah pengguna menekan OK, kirimkan formulir
             this.submit();
             $('#ModelSKTM').hide();
+            setTimeout(function() {
+                window.location.reload();
+            }, 2000);
+
+        });
+    });
+
+    document.getElementById('formSKDBelumMenikah').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        Swal.fire({
+            title: 'Success'
+            , text: 'Data berhasil ditambahkan, file Word siap untuk diunduh!'
+            , icon: 'success'
+        , }).then(() => {
+            // Setelah pengguna menekan OK, kirimkan formulir
+            this.submit();
+            $('#ModelSKDBelumMenikah').hide();
             setTimeout(function() {
                 window.location.reload();
             }, 2000);
