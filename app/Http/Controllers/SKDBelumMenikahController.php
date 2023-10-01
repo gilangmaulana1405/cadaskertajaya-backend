@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SuratKeteranganTidakMampu;
+use App\Models\SKDBelumMenikah;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
-class SuratKeteranganTidakMampuController extends Controller
+class SKDBelumMenikahController extends Controller
 {
-   public function index(){
+    public function index(){
         return view('index');
     }
 
-     public function create(Request $request)
+    public function create(Request $request)
     {
-        $data = new SuratKeteranganTidakMampu();
+        $data = new SKDBelumMenikah();
         $data->id = $request->input('id');
         $data->nama =  $request->input('nama');
         $data->ttl =  $request->input('ttl');
@@ -35,18 +35,18 @@ class SuratKeteranganTidakMampuController extends Controller
         $registrationNumber = rand(1000, 999999);
 
         // membuat penamaan file agar tidak menimpa
-        $fileName = $registrationNumber . '_' . 'Surat Keterangan Tidak Mampu' . '_' . $data->nama . '_' . $dateString . '.docx';
+        $fileName = $registrationNumber . '_' . 'SKD Belum Menikah' . '_' . $data->nama . '_' . $dateString . '.docx';
 
         // membuat 3 angka pada nomor surat secara berurutan
-        $id = SuratKeteranganTidakMampu::find($data->id);
+        $id = SKDBelumMenikah::find($data->id);
 
         $nomorSurat = str_pad($id->id, 3, '0', STR_PAD_LEFT);
 
         // membuat format nomor surat
-        $no_surat = '470' . '/' . $nomorSurat . '/' . 'VII-2023' . '/' . 'Ds.';
+        $no_surat = '470' . '/' . $nomorSurat . '/' . 'IX-2023' . '/' . 'Ds.';
 
         // Path ke templat Word
-        $templatePath = public_path('SuratKeteranganTidakMampu.docx');
+        $templatePath = public_path('SKDBelumMenikah.docx');
 
         // Path untuk menyimpan file hasil
         $outputPath = public_path($fileName);
@@ -77,5 +77,4 @@ class SuratKeteranganTidakMampuController extends Controller
         
         return response()->download($outputPath)->deleteFileAfterSend(true);
     }
-
 }
