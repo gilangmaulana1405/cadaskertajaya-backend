@@ -65,7 +65,7 @@
             {{-- SKD Belum Menikah --}}
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-toggle="modal" data-target="#ModelSKDBelumMenikah">
                 <div class="course-item">
-                    <img src="assets/img/SKDBelumMenikah.jpg" class="img-fluid" alt="..." />
+                    <img src="assets/img/SKDBelumMenikah.png" class="img-fluid" alt="..." />
                     <div class="course-content">
                         <h3><a data-toggle="modal" data-target="#ModelSKDBelumMenikah">SKD Belum Menikah</a>
                         </h3>
