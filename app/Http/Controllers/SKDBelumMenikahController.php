@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SKDBelumMenikah;
-use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
+use App\Models\SKDBelumMenikah;
 
 class SKDBelumMenikahController extends Controller
 {
@@ -29,7 +29,8 @@ class SKDBelumMenikahController extends Controller
 
 
         // format tgl
-        $dateString = Carbon::now('Asia/Jakarta')->isoFormat('D MMM Y');
+        $date = Carbon::now()->locale('id_ID');
+        $dateString = $date->isoFormat('D MMMM YYYY');
 
         // membuat nomor registrasi untuk nama file
         $registrationNumber = rand(1000, 999999);
