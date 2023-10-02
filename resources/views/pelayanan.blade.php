@@ -58,6 +58,9 @@
                         <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae
                             dolores dolorem
                             tempore.</p>
+
+                        <button class="btn btn-primary">Lokal</button>
+                        <button class="btn btn-danger">Pendatang</button>
                     </div>
                 </div>
             </div>
@@ -75,24 +78,6 @@
                     </div>
                 </div>
             </div>
-
-            {{-- SKD Domisili --}}
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-toggle="modal" data-target="#ModelSKDDomisili">
-                <div class="course-item">
-                    <img src="assets/img/SKDDomisili.png" class="img-fluid" alt="..." />
-                    <div class="course-content">
-                        <h3><a data-toggle="modal" data-target="#ModelSKDDomisili">SKD Domisili</a>
-                        </h3>
-                        <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae
-                            dolores dolorem
-                            tempore.</p>
-
-                        <button class="btn btn-primary">Lokal</button>
-                        <button class="btn btn-danger">Pendatang</button>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 </section>

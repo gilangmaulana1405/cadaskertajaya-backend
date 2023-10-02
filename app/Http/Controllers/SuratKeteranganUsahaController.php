@@ -36,7 +36,8 @@ class SuratKeteranganUsahaController extends Controller
 
 
         // format tgl
-        $dateString = Carbon::now('Asia/Jakarta')->isoFormat('D MMM Y');
+        $date = Carbon::now()->locale('id_ID');
+        $dateString = $date->isoFormat('D MMMM YYYY');
 
         // membuat nomor registrasi untuk nama file
         $registrationNumber = rand(1000, 999999);
