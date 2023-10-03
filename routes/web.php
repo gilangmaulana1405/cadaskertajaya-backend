@@ -3,9 +3,10 @@
 use App\Http\Controllers\PenggunaanController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SKDBelumMenikahController;
+use App\Http\Controllers\SuratKeteranganMeninggalController;
 use App\Http\Controllers\SuratKeteranganUsahaController;
 use App\Http\Controllers\SuratKeteranganTidakMampuController;
-
+use App\Models\SuratKeteranganMeninggal;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // sku
 Route::get('/sku', [SuratKeteranganUsahaController::class, 'index']);
 Route::post('/sku', [SuratKeteranganUsahaController::class, 'create'])->name('sku.create');
+
+// skm
+Route::get('/skm', [SuratKeteranganMeninggalController::class, 'index']);
+Route::post('/skm', [SuratKeteranganMeninggalController::class, 'create'])->name('skm.create');
 
 // sktm
 Route::get('/sktm', [SuratKeteranganTidakMampuController::class, 'index']);

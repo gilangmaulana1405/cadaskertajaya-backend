@@ -206,7 +206,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputPekerjaan">Pekerjaan</label>
-                        <input type="text" class="form-control" name="pekerjaan" id="inputPekerjaan" placeholder="Cth: Wiraswasta" required />
+                        <input type="text" class="form-control alphabet-input" name="pekerjaan" id="inputPekerjaan" placeholder="Cth: Wiraswasta" required />
                     </div>
                     <div class="form-group">
                         <label for="inputKewarganegaraan">Kewarganegaraan</label>
@@ -233,7 +233,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputJenisusaha">Jenis Usaha</label>
-                        <input type="text" class="form-control" name="jenis_usaha" id="inputJenisusaha" placeholder="Masukan jenis usaha" required />
+                        <input type="text" class="form-control alphabet-input" name="jenis_usaha" id="inputJenisusaha" placeholder="Masukan jenis usaha" required />
                     </div>
                     <div class="form-group">
                         <label for="inputLokasi">Lokasi Usaha</label>
@@ -262,31 +262,33 @@
             </div>
 
             <!-- Modal Body -->
-            <div class="modal-body">
-                <p class="statusMsg"></p>
-                <form role="form">
+            <form action="{{ route('skm.create') }}" method="POST" id="formSKM">
+                <div class="modal-body">
+                    <p class="statusMsg"></p>
+                    @csrf
                     <div>
                         <h4>Yang bertanda tangan dibawah ini, menerangkan bahwa</h4>
                     </div>
                     <div class="form-group">
                         <label for="inputNama">Nama Lengkap</label>
-                        <input type="text" class="form-control alphabet-input" id="inputNama" placeholder="Masukan nama" />
+                        <input type="text" class="form-control alphabet-input" name="nama" id="inputNama" placeholder="Masukan nama" required />
                     </div>
                     <div class="form-group">
                         <label for="inputNik">NIK</label>
-                        <input type="text" class="form-control numeric-input nik" placeholder="Masukan NIK" />
+                        <input type="text" class="form-control numeric-input nik" name="nik" placeholder="Masukan NIK" required />
                     </div>
                     <div class="form-group">
                         <label for="inputUmur">Umur</label>
-                        <input type="text" class="form-control numeric-input umur" placeholder="Masukan umur" />
+                        <input type="text" class="form-control numeric-input umur" name="umur" placeholder="Masukan umur" required />
                     </div>
                     <div class="form-group">
                         <label for="inputPekerjaan">Pekerjaan</label>
-                        <input type="text" class="form-control" id="inputPekerjaan" placeholder="Cth: Wiraswasta" />
+                        <input type="text" class="form-control alphabet-input" name="pekerjaan" id="inputPekerjaan" placeholder="Cth: Wiraswasta" required />
+
                     </div>
                     <div class="form-group">
                         <label for="inputAlamat">Alamat KTP</label>
-                        <input type="text" class="form-control" id="inputAlamat" placeholder="Masukan alamat" />
+                        <input type="text" class="form-control" name="alamat_ktp" id="inputAlamat" placeholder="Masukan alamat" required />
                     </div>
                     <div>
                         <br>
@@ -294,7 +296,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputHari">Hari</label>
-                        <select class="form-select" name="hari">
+                        <select class="form-select" name="hari_kematian">
                             <option value="Senin">Senin</option>
                             <option value="Selasa">Selasa</option>
                             <option value="Rabu">Rabu</option>
@@ -306,11 +308,11 @@
                     </div>
                     <div class="form-group">
                         <label for="inputTanggal">Tanggal</label>
-                        <input type="date" class="form-control" id="inputTanggal" />
+                        <input type="date" class="form-control" name="tanggal_kematian" id="inputTanggal" required />
                     </div>
                     <div class="form-group">
                         <label for="inputPukul">Jam</label>
-                        <select class="form-select" name="hari">
+                        <select class="form-select" name="jam_kematian">
                             <option value="01:00">01:00</option>
                             <option value="02:00">02:00</option>
                             <option value="03:00">03:00</option>
@@ -339,11 +341,11 @@
                     </div>
                     <div class="form-group">
                         <label for="inputTempatkematian">Tempat Kematian</label>
-                        <input type="text" class="form-control" id="inputTempatkematian" placeholder="Masukan tempat kematian" />
+                        <input type="text" class="form-control" name="tempat_kematian" id="inputTempatkematian" placeholder="Masukan tempat kematian" required />
                     </div>
                     <div class="form-group">
                         <label for="inputPenyebabkematian">Penyebab Kematian</label>
-                        <input type="text" class="form-control" id="inputPenyebabkematian" placeholder="Masukan penyebab kematian" />
+                        <input type="text" class="form-control" name="penyebab_kematian" id="inputPenyebabkematian" placeholder="Masukan penyebab kematian" required />
                     </div>
                     <div>
                         <br>
@@ -351,36 +353,36 @@
                     </div>
                     <div class="form-group">
                         <label for="inputNama">Nama Lengkap</label>
-                        <input type="text" class="form-control alphabet-input" id="inputNama" placeholder="Masukan nama" />
+                        <input type="text" class="form-control alphabet-input" name="nama_pelapor" id="inputNama" placeholder="Masukan nama" required />
                     </div>
                     <div class="form-group">
                         <label for="inputNik">NIK</label>
-                        <input type="text" class="form-control nik" placeholder="Masukan NIK" />
+                        <input type="text" class="form-control nik" name="nik_pelapor" placeholder="Masukan NIK" required />
                     </div>
                     <div class="form-group">
                         <label for="inputUmur">Umur</label>
-                        <input type="text" class="form-control numeric-input umur" placeholder="Masukan umur" />
+                        <input type="text" class="form-control numeric-input umur" name="umur_pelapor" placeholder="Masukan umur" required />
                     </div>
                     <div class="form-group">
                         <label for="inputPekerjaan">Pekerjaan</label>
-                        <input type="text" class="form-control" id="inputPekerjaan" placeholder="Cth: Wiraswasta" />
+                        <input type="text" class="form-control alphabet-input" id="inputPekerjaan" name="pekerjaan_pelapor" placeholder="Cth: Wiraswasta" required />
                     </div>
                     <div class="form-group">
                         <label for="inputAlamat">Alamat</label>
-                        <input type="text" class="form-control" id="inputAlamat" placeholder="Masukan alamat" />
+                        <input type="text" class="form-control" id="inputAlamat" name="alamat_ktp_pelapor" placeholder="Masukan alamat" required />
                     </div>
                     <div class="form-group">
                         <label for="inputHubungan">Hubungan Pelapor Dengan Yang Meninggal Dunia</label>
-                        <input type="text" class="form-control" id="inputHubungan" placeholder="Masukan hubungan pelapor dengan yang meninggal dunia" />
+                        <input type="text" class="form-control" name="status_hubungan" id="inputHubungan" placeholder="Masukan hubungan pelapor dengan yang meninggal dunia" required />
                     </div>
-                </form>
-            </div>
+                </div>
 
-            <!-- Modal Footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">SUBMIT</button>
-            </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">SUBMIT</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -443,7 +445,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputPekerjaan">Pekerjaan</label>
-                        <input type="text" class="form-control" name="pekerjaan" id="inputPekerjaan" placeholder="Cth: Wiraswasta" required />
+                        <input type="text" class="form-control alphabet-input" name="pekerjaan" id="inputPekerjaan" placeholder="Cth: Wiraswasta" required />
                     </div>
                     <div class="form-group">
                         <label for="inputKewarganegaraan">Kewarganegaraan</label>
@@ -567,7 +569,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputPekerjaan">Pekerjaan</label>
-                        <input type="text" class="form-control" name="pekerjaan" id="inputPekerjaan" placeholder="Cth: Wiraswasta" required />
+                        <input type="text" class="form-control alphabet-input" name="pekerjaan" id="inputPekerjaan" placeholder="Cth: Wiraswasta" required />
                     </div>
                     <div class="form-group">
                         <label for="inputKewarganegaraan">Kewarganegaraan</label>
@@ -700,6 +702,24 @@
             // Setelah pengguna menekan OK, kirimkan formulir
             this.submit();
             $('#ModelSKU').hide();
+            setTimeout(function() {
+                window.location.reload();
+            }, 2000);
+
+        });
+    });
+
+    document.getElementById('formSKM').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        Swal.fire({
+            title: 'Success'
+            , text: 'Data berhasil ditambahkan, file Word siap untuk diunduh!'
+            , icon: 'success'
+        , }).then(() => {
+            // Setelah pengguna menekan OK, kirimkan formulir
+            this.submit();
+            $('#ModelSKM').hide();
             setTimeout(function() {
                 window.location.reload();
             }, 2000);
