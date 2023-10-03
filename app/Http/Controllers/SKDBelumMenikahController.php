@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\SKDBelumMenikah;
 
 class SKDBelumMenikahController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('index');
     }
 
@@ -27,6 +29,10 @@ class SKDBelumMenikahController extends Controller
         $data->nik =  $request->input('nik');
         $data->save();
 
+        $nama =  Str::title($data->nama);
+        $ttl =  Str::title($data->ttl);
+        $alamat =  Str::title($data->alamat);
+        $pekerjaan =  Str::title($data->pekerjaan);
 
         // format tgl
         $date = Carbon::now()->locale('id_ID');
@@ -58,13 +64,13 @@ class SKDBelumMenikahController extends Controller
 
         $templateData = [
             'no_surat' => $no_surat,
-            'nama' => $data->nama,
-            'ttl' => $data->ttl,
+            'nama' => $nama,
+            'ttl' => $ttl,
             'jenis_kelamin' => $data->jenis_kelamin,
-            'alamat' => $data->alamat,
+            'alamat' => $alamat,
             'agama' => $data->agama,
             'status_perkawinan' => $data->status_perkawinan,
-            'pekerjaan' => $data->pekerjaan,
+            'pekerjaan' => $pekerjaan,
             'kewarganegaraan' => $data->kewarganegaraan,
             'nik' => $data->nik,
             'created_at' => $dateString
@@ -75,7 +81,7 @@ class SKDBelumMenikahController extends Controller
         }
 
         $phpWord->saveAs($outputPath);
-        
+
         return response()->download($outputPath)->deleteFileAfterSend(true);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\SuratKeteranganUsaha;
 
@@ -34,6 +35,14 @@ class SuratKeteranganUsahaController extends Controller
         $data->lokasi_usaha =  $request->input('lokasi_usaha');
         $data->save();
 
+        $nama =  Str::title($data->nama);
+        $ttl =  Str::title($data->ttl);
+        $alamat =  Str::title($data->alamat);
+        $pekerjaan =  Str::title($data->pekerjaan);
+        $nama_usaha =  Str::title($data->nama_usaha);
+        $jenis_usaha =  Str::title($data->jenis_usaha);
+        $lokasi_usaha =  Str::title($data->lokasi_usaha);
+
 
         // format tgl
         $date = Carbon::now()->locale('id_ID');
@@ -43,7 +52,7 @@ class SuratKeteranganUsahaController extends Controller
         $registrationNumber = rand(1000, 999999);
 
         // membuat penamaan file agar tidak menimpa
-        $fileName = $registrationNumber . '_' . 'Surat Keterangan Usaha' . '_' . $data->nama . '_' . $dateString . '.docx';
+        $fileName = $registrationNumber . '_' . 'Surat Keterangan Usaha' . '_' . $nama . '_' . $dateString . '.docx';
 
         // membuat 3 angka pada nomor surat secara berurutan
         $id = SuratKeteranganUsaha::find($data->id);
@@ -63,21 +72,22 @@ class SuratKeteranganUsahaController extends Controller
 
         $phpWord = new \PhpOffice\PhpWord\TemplateProcessor($outputPath);
 
+        
         $templateData = [
             'no_surat' => $no_surat,
-            'nama' => $data->nama,
-            'ttl' => $data->ttl,
+            'nama' => $nama,
+            'ttl' => $ttl,
             'jenis_kelamin' => $data->jenis_kelamin,
-            'alamat' => $data->alamat,
+            'alamat' => $alamat,
             'agama' => $data->agama,
             'status_perkawinan' => $data->status_perkawinan,
-            'pekerjaan' => $data->pekerjaan,
+            'pekerjaan' => $pekerjaan,
             'kewarganegaraan' => $data->kewarganegaraan,
             'nik' => $data->nik,
-            'nama_usaha' => $data->nama_usaha,
-            'jenis_usaha' => $data->jenis_usaha,
             'tahun_usaha' => $data->tahun_usaha,
-            'lokasi_usaha' => $data->lokasi_usaha,
+            'nama_usaha' => $nama_usaha,
+            'jenis_usaha' => $jenis_usaha,
+            'lokasi_usaha' => $lokasi_usaha,
             'created_at' => $dateString
         ];
 

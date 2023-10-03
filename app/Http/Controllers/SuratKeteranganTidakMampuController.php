@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SuratKeteranganTidakMampu;
-use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Models\SuratKeteranganTidakMampu;
 
 class SuratKeteranganTidakMampuController extends Controller
 {
-   public function index(){
+    public function index()
+    {
         return view('index');
     }
 
-     public function create(Request $request)
+    public function create(Request $request)
     {
         $data = new SuratKeteranganTidakMampu();
         $data->id = $request->input('id');
@@ -26,6 +28,11 @@ class SuratKeteranganTidakMampuController extends Controller
         $data->kewarganegaraan =  $request->input('kewarganegaraan');
         $data->nik =  $request->input('nik');
         $data->save();
+
+        $nama =  Str::title($data->nama);
+        $ttl =  Str::title($data->ttl);
+        $alamat =  Str::title($data->alamat);
+        $pekerjaan =  Str::title($data->pekerjaan);
 
 
         // format tgl
@@ -58,13 +65,13 @@ class SuratKeteranganTidakMampuController extends Controller
 
         $templateData = [
             'no_surat' => $no_surat,
-            'nama' => $data->nama,
-            'ttl' => $data->ttl,
+            'nama' => $nama,
+            'ttl' => $ttl,
             'jenis_kelamin' => $data->jenis_kelamin,
-            'alamat' => $data->alamat,
+            'alamat' => $alamat,
             'agama' => $data->agama,
             'status_perkawinan' => $data->status_perkawinan,
-            'pekerjaan' => $data->pekerjaan,
+            'pekerjaan' => $pekerjaan,
             'kewarganegaraan' => $data->kewarganegaraan,
             'nik' => $data->nik,
             'created_at' => $dateString
@@ -75,8 +82,7 @@ class SuratKeteranganTidakMampuController extends Controller
         }
 
         $phpWord->saveAs($outputPath);
-        
+
         return response()->download($outputPath)->deleteFileAfterSend(true);
     }
-
 }
