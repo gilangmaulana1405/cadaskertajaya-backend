@@ -3,6 +3,7 @@
 use App\Http\Controllers\PenggunaanController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SKDBelumMenikahController;
+use App\Http\Controllers\SKDDomisiliController;
 use App\Http\Controllers\SuratKeteranganMeninggalController;
 use App\Http\Controllers\SuratKeteranganUsahaController;
 use App\Http\Controllers\SuratKeteranganTidakMampuController;
@@ -33,6 +34,10 @@ Route::post('/skm', [SuratKeteranganMeninggalController::class, 'create'])->name
 // sktm
 Route::get('/sktm', [SuratKeteranganTidakMampuController::class, 'index']);
 Route::post('/sktm', [SuratKeteranganTidakMampuController::class, 'create'])->name('sktm.create');
+
+// skd domisili
+Route::get('/skddomisili', [SKDDomisiliController::class, 'index']);
+Route::post('/skddomisili', [SKDDomisiliController::class, 'create'])->name('skddomisili.create');
 
 // skd belum menikah
 Route::get('/skdbelummenikah', [SKDBelumMenikahController::class, 'index']);

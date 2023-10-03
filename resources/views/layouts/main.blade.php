@@ -477,36 +477,85 @@
             <!-- Modal Header -->
             <div class="modal-header">
                 <h2>Formulir SK Domisili</h2>
-                <button type="button" class="close" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Close</span>
-                </button>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
 
             <!-- Modal Body -->
             <div class="modal-body">
                 <p class="statusMsg"></p>
-                <form role="form">
-                    <div class="form-group">
-                        <label for="inputName">Name</label>
-                        <input type="text" class="form-control" id="inputName" placeholder="Enter your name" />
+                <form action="{{ route('skddomisili.create') }}" method="POST" id="formSKDDomisili">
+                    @csrf
+                    <div>
+                        <h4>Yang bertanda tangan dibawah ini, menerangkan bahwa:</h4>
                     </div>
                     <div class="form-group">
-                        <label for="inputEmail">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email" />
+                        <label for="inputNama">Nama</label>
+                        <input type="text" class="form-control alphabet-input" name="nama" id="inputNama" placeholder="Masukan nama" required />
                     </div>
                     <div class="form-group">
-                        <label for="inputMessage">Message</label>
-                        <textarea class="form-control" id="inputMessage" placeholder="Enter your message"></textarea>
+                        <label for="inputTtl">Tempat/Tanggal Lahir</label>
+                        <input type="text" class="form-control" name="ttl" id="inputTtl" placeholder="Cth: Karawang, 01 Januari 2002" required />
                     </div>
-                </form>
+                    <div class="form-group">
+                        <label for="inputJeniskelamin">Jenis Kelamin</label>
+                        <select class="form-select" name="jenis_kelamin" aria-label="Default select example">
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAlamat">Alamat</label>
+                        <input type="text" class="form-control" name="alamat" id="inputAlamat" placeholder="Masukan alamat" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAgama">Agama</label>
+                        <select class="form-select" name="agama">
+                            <option value="Islam">Islam</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Katholik">Katholik</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Buddha">Buddha</option>
+                            <option value="Konghucu">Konghucu</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputStatusperkawinan">Status Perkawinan</label>
+                        <select class="form-select" name="status_perkawinan" aria-label="Default select example">
+                            <option value="Belum Menikah">Belum Menikah</option>
+                            <option value="Menikah">Menikah</option>
+                            <option value="Cerai">Cerai</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPekerjaan">Pekerjaan</label>
+                        <input type="text" class="form-control alphabet-input" name="pekerjaan" id="inputPekerjaan" placeholder="Cth: Wiraswasta" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputKewarganegaraan">Kewarganegaraan</label>
+                        <select class="form-select" name="kewarganegaraan">
+                            <option value="WNI">WNI</option>
+                            <option value="WNA">WNA</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputNik">NIK</label>
+                        <input type="text" class="form-control numeric-input nik" name="nik" placeholder="Masukan NIK" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputStatusperkawinan">Status Kependudukan</label>
+                        <select class="form-select" name="status_kependudukan" aria-label="Default select example">
+                            <option value="Penduduk Lama">Penduduk Lama</option>
+                            <option value="Pendatang">Pendatang</option>
+                        </select>
+                    </div>
             </div>
 
             <!-- Modal Footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">SUBMIT</button>
+                <button type="submit" class="btn btn-primary">SUBMIT</button>
             </div>
+            </form>
         </div>
     </div>
 </div>
@@ -593,6 +642,7 @@
         </div>
     </div>
 </div>
+
 
 
 <!-- membuat inputan max 16,4,2 angka untuk field NIK ,Tahun Usaha,Umur -->
@@ -738,6 +788,24 @@
             // Setelah pengguna menekan OK, kirimkan formulir
             this.submit();
             $('#ModelSKTM').hide();
+            setTimeout(function() {
+                window.location.reload();
+            }, 2000);
+
+        });
+    });
+
+    document.getElementById('formSKDDomisili').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        Swal.fire({
+            title: 'Success'
+            , text: 'Data berhasil ditambahkan, file Word siap untuk diunduh!'
+            , icon: 'success'
+        , }).then(() => {
+            // Setelah pengguna menekan OK, kirimkan formulir
+            this.submit();
+            $('#ModelSKDDomisili').hide();
             setTimeout(function() {
                 window.location.reload();
             }, 2000);
