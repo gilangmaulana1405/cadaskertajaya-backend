@@ -593,8 +593,6 @@
 </div>
 
 
-
-
 <!-- membuat inputan max 16,4,2 angka untuk field NIK ,Tahun Usaha,Umur -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -656,6 +654,7 @@
             });
         });
     });
+
 </script>
 
 <!-- untuk membuat inputan hanya angka -->
