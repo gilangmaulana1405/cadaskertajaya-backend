@@ -217,7 +217,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputNik">NIK</label>
-                        <input type="text" class="form-control numeric-input" name="nik" id="inputNik" placeholder="Masukan NIK" required />
+                        <input type="text" class="form-control numeric-input nik" name="nik" placeholder="Masukan NIK" required />
                     </div>
                     <div>
                         <br>
@@ -225,7 +225,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputTahunUsaha">Tahun Awal Usaha</label>
-                        <input type="text" class="form-control numeric-input" name="tahun_usaha" id="inputTahunUsaha" placeholder="Masukan tahun awal usaha" required />
+                        <input type="text" class="form-control numeric-input tahunUsaha" name="tahun_usaha" placeholder="Masukan tahun awal usaha" required />
                     </div>
                     <div class="form-group">
                         <label for="inputNamausaha">Nama Usaha</label>
@@ -258,10 +258,7 @@
             <!-- Modal Header -->
             <div class="modal-header">
                 <h2>Formulir SKM</h2>
-                <button type="button" class="close" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Close</span>
-                </button>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
 
             <!-- Modal Body -->
@@ -273,19 +270,19 @@
                     </div>
                     <div class="form-group">
                         <label for="inputNama">Nama Lengkap</label>
-                        <input type="text" class="form-control" id="inputNama" placeholder="Masukan nama" />
+                        <input type="text" class="form-control alphabet-input" id="inputNama" placeholder="Masukan nama" />
                     </div>
                     <div class="form-group">
                         <label for="inputNik">NIK</label>
-                        <input type="text" class="form-control" id="inputNik" placeholder="Masukan NIK" />
+                        <input type="text" class="form-control numeric-input nik" placeholder="Masukan NIK" />
                     </div>
                     <div class="form-group">
                         <label for="inputUmur">Umur</label>
-                        <input type="text" class="form-control" id="inputUmur" placeholder="Masukan umur" />
+                        <input type="text" class="form-control numeric-input umur" placeholder="Masukan umur" />
                     </div>
                     <div class="form-group">
                         <label for="inputPekerjaan">Pekerjaan</label>
-                        <input type="text" class="form-control" id="inputPekerjaan" placeholder="Masukan pekerjaan" />
+                        <input type="text" class="form-control" id="inputPekerjaan" placeholder="Cth: Wiraswasta" />
                     </div>
                     <div class="form-group">
                         <label for="inputAlamat">Alamat KTP</label>
@@ -297,7 +294,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputHari">Hari</label>
-                        <select class="form-select" name="hari" aria-label="Default select example">
+                        <select class="form-select" name="hari">
                             <option value="Senin">Senin</option>
                             <option value="Selasa">Selasa</option>
                             <option value="Rabu">Rabu</option>
@@ -306,15 +303,39 @@
                             <option value="Sabtu">Sabtu</option>
                             <option value="Minggu">Minggu</option>
                         </select>
-
                     </div>
                     <div class="form-group">
                         <label for="inputTanggal">Tanggal</label>
-                        <input type="text" class="form-control" id="inputTanggal" placeholder="Masukan tanggal" />
+                        <input type="date" class="form-control" id="inputTanggal" />
                     </div>
                     <div class="form-group">
-                        <label for="inputPukul">Pukul</label>
-                        <input type="text" class="form-control" id="inputPukul" placeholder="Masukan pukul" />
+                        <label for="inputPukul">Jam</label>
+                        <select class="form-select" name="hari">
+                            <option value="01:00">01:00</option>
+                            <option value="02:00">02:00</option>
+                            <option value="03:00">03:00</option>
+                            <option value="04:00">04:00</option>
+                            <option value="05:00">05:00</option>
+                            <option value="06:00">06:00</option>
+                            <option value="07:00">07:00</option>
+                            <option value="08:00">08:00</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                            <option value="20:00">20:00</option>
+                            <option value="21:00">21:00</option>
+                            <option value="22:00">22:00</option>
+                            <option value="23:00">23:00</option>
+                            <option value="24:00">24:00</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="inputTempatkematian">Tempat Kematian</label>
@@ -330,19 +351,19 @@
                     </div>
                     <div class="form-group">
                         <label for="inputNama">Nama Lengkap</label>
-                        <input type="text" class="form-control" id="inputNama" placeholder="Masukan nama" />
+                        <input type="text" class="form-control alphabet-input" id="inputNama" placeholder="Masukan nama" />
                     </div>
                     <div class="form-group">
                         <label for="inputNik">NIK</label>
-                        <input type="text" class="form-control" id="inputNik" placeholder="Masukan NIK" />
+                        <input type="text" class="form-control nik" placeholder="Masukan NIK" />
                     </div>
                     <div class="form-group">
                         <label for="inputUmur">Umur</label>
-                        <input type="text" class="form-control" id="inputUmur" placeholder="Masukan umur" />
+                        <input type="text" class="form-control numeric-input umur" placeholder="Masukan umur" />
                     </div>
                     <div class="form-group">
                         <label for="inputPekerjaan">Pekerjaan</label>
-                        <input type="text" class="form-control" id="inputPekerjaan" placeholder="Masukan pekerjaan" />
+                        <input type="text" class="form-control" id="inputPekerjaan" placeholder="Cth: Wiraswasta" />
                     </div>
                     <div class="form-group">
                         <label for="inputAlamat">Alamat</label>
@@ -358,7 +379,7 @@
             <!-- Modal Footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">SUBMIT</button>
+                <button type="submit" class="btn btn-primary">SUBMIT</button>
             </div>
         </div>
     </div>
@@ -433,7 +454,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputNik">NIK</label>
-                        <input type="text" class="form-control numeric-input" name="nik" id="inputNikSKTM" placeholder="Masukan NIK" required />
+                        <input type="text" class="form-control numeric-input nik" name="nik" placeholder="Masukan NIK" required />
                     </div>
             </div>
 
@@ -557,8 +578,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputNik">NIK</label>
-                        <input type="text" class="form-control numeric-input" name="nik" id="inputNikSKDBelumMenikah" placeholder="Masukan NIK" required />
-
+                        <input type="text" class="form-control numeric-input nik" name="nik" placeholder="Masukan NIK" required />
                     </div>
             </div>
 
@@ -575,73 +595,67 @@
 
 
 
-<!-- membuat inputan max 16 & 4 angka untuk field NIK dan Tahun Usaha -->
+<!-- membuat inputan max 16,4,2 angka untuk field NIK ,Tahun Usaha,Umur -->
 <script>
-    let inputElementNik = document.getElementById("inputNik");
-    let inputElementNikSKTM = document.getElementById("inputNikSKTM");
-    let inputElementNikSKDBelumMenikah = document.getElementById("inputNikSKDBelumMenikah");
-    let inputElementTahunUsaha = document.getElementById("inputTahunUsaha");
+    document.addEventListener("DOMContentLoaded", function() {
+        let inputNIK = document.querySelectorAll('.nik');
+        let inputTahunUsaha = document.querySelectorAll('.tahunUsaha');
+        let inputUmur = document.querySelectorAll('.umur');
 
-    inputElementNik.addEventListener("input", function() {
-        let inputValueNik = inputElementNik.value;
+        inputNIK.forEach(function(input) {
+            input.addEventListener("input", function() {
+                let inputValue = input.value;
 
-        // Hapus karakter yang tidak valid
-        let validValueNik = inputValueNik.replace(/[^0-9]/g, '');
+                // Hapus karakter yang tidak valid
+                let validValue = inputValue.replace(/[^0-9]/g, '');
 
-        // Batasi panjang string menjadi 4 karakter
-        if (validValueNik.length > 16) {
-            validValueNik = validValueNik.slice(0, 16);
-        }
+                // Batasi panjang string menjadi 16 karakter
+                if (validValue.length > 16) {
+                    validValue = validValue.slice(0, 16);
+                }
 
-        // Setel nilai input dengan string yang sudah valid
-        inputElementNik.value = validValueNik;
+                // Setel nilai input dengan string yang sudah valid
+                input.value = validValue;
+
+            });
+        });
+
+        inputTahunUsaha.forEach(function(input) {
+            input.addEventListener("input", function() {
+                let inputValue = input.value;
+
+                // Hapus karakter yang tidak valid
+                let validValue = inputValue.replace(/[^0-9]/g, '');
+
+                // Batasi panjang string menjadi 4 karakter
+                if (validValue.length > 4) {
+                    validValue = validValue.slice(0, 4);
+                }
+
+                // Setel nilai input dengan string yang sudah valid
+                input.value = validValue;
+
+            });
+        });
+
+        inputUmur.forEach(function(input) {
+            input.addEventListener("input", function() {
+                let inputValue = input.value;
+
+                // Hapus karakter yang tidak valid
+                let validValue = inputValue.replace(/[^0-9]/g, '');
+
+                // Batasi panjang string menjadi 2 karakter
+                if (validValue.length > 2) {
+                    validValue = validValue.slice(0, 2);
+                }
+
+                // Setel nilai input dengan string yang sudah valid
+                input.value = validValue;
+
+            });
+        });
     });
-
-    inputElementNikSKTM.addEventListener("input", function() {
-        let inputValueNik = inputElementNikSKTM.value;
-
-        // Hapus karakter yang tidak valid
-        let validValueNik = inputValueNik.replace(/[^0-9]/g, '');
-
-        // Batasi panjang string menjadi 4 karakter
-        if (validValueNik.length > 16) {
-            validValueNik = validValueNik.slice(0, 16);
-        }
-
-        // Setel nilai input dengan string yang sudah valid
-        inputElementNikSKTM.value = validValueNik;
-    });
-
-    inputElementNikSKDBelumMenikah.addEventListener("input", function() {
-        let inputValueNik = inputElementNikSKDBelumMenikah.value;
-
-        // Hapus karakter yang tidak valid
-        let validValueNik = inputValueNik.replace(/[^0-9]/g, '');
-
-        // Batasi panjang string menjadi 4 karakter
-        if (validValueNik.length > 16) {
-            validValueNik = validValueNik.slice(0, 16);
-        }
-
-        // Setel nilai input dengan string yang sudah valid
-        inputElementNikSKDBelumMenikah.value = validValueNik;
-    });
-
-    inputElementTahunUsaha.addEventListener("input", function() {
-        let inputValueTahunUsaha = inputElementTahunUsaha.value;
-
-        // Hapus karakter yang tidak valid
-        let validValueTahunUsaha = inputValueTahunUsaha.replace(/[^0-9]/g, '');
-
-        // Batasi panjang string menjadi 4 karakter
-        if (validValueTahunUsaha.length > 4) {
-            validValueTahunUsaha = validValueTahunUsaha.slice(0, 4);
-        }
-
-        // Setel nilai input dengan string yang sudah valid
-        inputElementTahunUsaha.value = validValueTahunUsaha;
-    });
-
 </script>
 
 <!-- untuk membuat inputan hanya angka -->
@@ -671,14 +685,6 @@
             });
         });
     });
-
-    // let inputElement = document.getElementById("inputNama");
-
-    // // Menambahkan event listener pada input
-    // inputElement.addEventListener("input", function () {
-    //     // Menghapus karakter selain huruf dari input
-    //     inputElement.value = inputElement.value.replace(/[^a-zA-Z\s]/g, '');
-    // });
 
 </script>
 
