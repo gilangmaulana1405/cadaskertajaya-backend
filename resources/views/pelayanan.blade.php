@@ -58,9 +58,6 @@
                         <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae
                             dolores dolorem
                             tempore.</p>
-
-                        <button class="btn btn-primary">Lokal</button>
-                        <button class="btn btn-danger">Pendatang</button>
                     </div>
                 </div>
             </div>
