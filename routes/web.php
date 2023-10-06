@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Models\SuratKeteranganMeninggal;
@@ -56,4 +57,8 @@ Route::get('/admin/skdBelumMenikah/', [DashboardAdminController::class, 'adminSK
 // detail
 Route::get('/admin/sku/{id}', [DashboardAdminController::class, 'detailSKU']);
 Route::get('/admin/skm/{id}', [DashboardAdminController::class, 'detailSKM']);
+
+Route::get('/admin/login', [LoginController::class, 'index'])->name('admin.index');
+Route::post('/admin/login', [LoginController::class, 'login'])->name('admin.login');
+Route::get('/admin/logout', [LoginController::class, 'logout'])->name('admin.logout');
 
