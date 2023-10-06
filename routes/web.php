@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\PenggunaanController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SKDBelumMenikahController;
-use App\Http\Controllers\SKDDomisiliController;
-use App\Http\Controllers\SuratKeteranganMeninggalController;
-use App\Http\Controllers\SuratKeteranganUsahaController;
-use App\Http\Controllers\SuratKeteranganTidakMampuController;
-use App\Models\SuratKeteranganMeninggal;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Models\SuratKeteranganMeninggal;
+use App\Http\Controllers\PenggunaanController;
+use App\Http\Controllers\SKDDomisiliController;
+use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\SKDBelumMenikahController;
+use App\Http\Controllers\SuratKeteranganUsahaController;
+use App\Http\Controllers\SuratKeteranganMeninggalController;
+use App\Http\Controllers\SuratKeteranganTidakMampuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,4 +43,17 @@ Route::post('/skddomisili', [SKDDomisiliController::class, 'create'])->name('skd
 // skd belum menikah
 Route::get('/skdbelummenikah', [SKDBelumMenikahController::class, 'index']);
 Route::post('/skdbelummenikah', [SKDBelumMenikahController::class, 'create'])->name('skdbelummenikah.create');
+
+
+// admin
+Route::get('/admin/dashboard/', [DashboardAdminController::class, 'index']);
+Route::get('/admin/sku/', [DashboardAdminController::class, 'adminSKU'])->name('admin.sku');
+Route::get('/admin/skm/', [DashboardAdminController::class, 'adminSKM'])->name('admin.skm');
+Route::get('/admin/sktm/', [DashboardAdminController::class, 'adminSKTM'])->name('admin.sktm');
+Route::get('/admin/skdDomisili/', [DashboardAdminController::class, 'adminSKDDomisili'])->name('admin.skdDomisili');
+Route::get('/admin/skdBelumMenikah/', [DashboardAdminController::class, 'adminSKDBelumMenikah'])->name('admin.skdBelumMenikah');
+
+// detail
+Route::get('/admin/sku/{id}', [DashboardAdminController::class, 'detailSKU']);
+Route::get('/admin/skm/{id}', [DashboardAdminController::class, 'detailSKM']);
 
