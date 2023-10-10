@@ -7,7 +7,12 @@ use App\Models\SuratKeteranganMeninggal;
 use App\Http\Controllers\PenggunaanController;
 use App\Http\Controllers\SKDDomisiliController;
 use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\SKDBelumMenikahAdminController;
 use App\Http\Controllers\SKDBelumMenikahController;
+use App\Http\Controllers\SKDDomisiliAdminController;
+use App\Http\Controllers\SKMAdminController;
+use App\Http\Controllers\SKTMAdminController;
+use App\Http\Controllers\SKUAdminController;
 use App\Http\Controllers\SuratKeteranganUsahaController;
 use App\Http\Controllers\SuratKeteranganMeninggalController;
 use App\Http\Controllers\SuratKeteranganTidakMampuController;
@@ -52,15 +57,15 @@ use App\Http\Controllers\SuratKeteranganTidakMampuController;
 
 Route::middleware(['admin'])->group(function (){
     Route::get('/admin/dashboard/', [DashboardAdminController::class, 'index']);
-    Route::get('/admin/sku/', [DashboardAdminController::class, 'adminSKU'])->name('admin.sku');
-    Route::get('/admin/skm/', [DashboardAdminController::class, 'adminSKM'])->name('admin.skm');
-    Route::get('/admin/sktm/', [DashboardAdminController::class, 'adminSKTM'])->name('admin.sktm');
-    Route::get('/admin/skdDomisili/', [DashboardAdminController::class, 'adminSKDDomisili'])->name('admin.skdDomisili');
-    Route::get('/admin/skdBelumMenikah/', [DashboardAdminController::class, 'adminSKDBelumMenikah'])->name('admin.skdBelumMenikah');
+    Route::get('/admin/sku/', [SKUAdminController::class, 'adminSKU'])->name('admin.sku');
+    Route::get('/admin/skm/', [SKMAdminController::class, 'adminSKM'])->name('admin.skm');
+    Route::get('/admin/sktm/', [SKTMAdminController::class, 'adminSKTM'])->name('admin.sktm');
+    Route::get('/admin/skdDomisili/', [SKDDomisiliAdminController::class, 'adminSKDDomisili'])->name('admin.skdDomisili');
+    Route::get('/admin/skdBelumMenikah/', [SKDBelumMenikahAdminController::class, 'adminSKDBelumMenikah'])->name('admin.skdBelumMenikah');
     
     // detail
-    Route::get('/admin/sku/{id}', [DashboardAdminController::class, 'detailSKU']);
-    Route::get('/admin/skm/{id}', [DashboardAdminController::class, 'detailSKM']);
+    Route::get('/admin/sku/{id}', [SKUAdminController::class, 'detailSKU']);
+    Route::get('/admin/skm/{id}', [SKMAdminController::class, 'detailSKM']);
 });
 
 Route::get('/admin/logout', [LoginController::class, 'logout'])->name('admin.logout');
