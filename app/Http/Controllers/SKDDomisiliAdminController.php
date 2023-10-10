@@ -9,7 +9,7 @@ class SKDDomisiliAdminController extends Controller
 {
     public function adminSKDDomisili()
     {
-        $dataSKDDomisili = SKDDomisili::all();
+        $dataSKDDomisili = SKDDomisili::orderBy('created_at', 'desc')->get();
         return view('admin/skdDomisili', ['dataSKDDomisili' => $dataSKDDomisili]);
     }
 }

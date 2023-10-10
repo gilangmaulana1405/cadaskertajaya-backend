@@ -9,7 +9,7 @@ class SKUAdminController extends Controller
 {
      public function adminSKU()
     {
-        $dataSKU = SuratKeteranganUsaha::all();
+        $dataSKU = SuratKeteranganUsaha::orderBy('created_at', 'desc')->get();
         return view('admin/sku', ['dataSKU' => $dataSKU]);
     }
 
@@ -23,5 +23,10 @@ class SKUAdminController extends Controller
         }
 
         return view('admin/detailSKU', ['data' => $data]);
+    }
+
+    public function editSKU($id){
+        $data = SuratKeteranganUsaha::find($id);
+        return view('admin/editSKU', ['data' => $data]);
     }
 }

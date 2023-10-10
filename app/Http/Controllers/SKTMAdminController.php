@@ -9,7 +9,7 @@ class SKTMAdminController extends Controller
 {
      public function adminSKTM()
     {
-        $dataSKTM = SuratKeteranganTidakMampu::all();
+        $dataSKTM = SuratKeteranganTidakMampu::orderBy('created_at', 'desc')->get();
         return view('admin/sktm', ['dataSKTM' => $dataSKTM]);
     }
 }

@@ -9,7 +9,7 @@ class SKDBelumMenikahAdminController extends Controller
 {
      public function adminSKDBelumMenikah()
     {
-        $dataSKDBelumMenikah = SKDBelumMenikah::all();
+        $dataSKDBelumMenikah = SKDBelumMenikah::orderBy('created_at', 'desc')->get();
         return view('admin/skdBelumMenikah', ['dataSKDBelumMenikah' => $dataSKDBelumMenikah]);
     }
 }

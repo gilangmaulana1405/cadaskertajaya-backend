@@ -66,6 +66,8 @@ Route::middleware(['admin'])->group(function (){
     // detail
     Route::get('/admin/sku/{id}', [SKUAdminController::class, 'detailSKU']);
     Route::get('/admin/skm/{id}', [SKMAdminController::class, 'detailSKM']);
+
+    Route::get('/admin/{id}/sku', [SKUAdminController::class, 'editSKU']);
 });
 
 Route::get('/admin/logout', [LoginController::class, 'logout'])->name('admin.logout');

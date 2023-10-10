@@ -10,7 +10,7 @@ class SKMAdminController extends Controller
 
     public function adminSKM()
     {
-        $dataSKM = SuratKeteranganMeninggal::all();
+        $dataSKM = SuratKeteranganMeninggal::orderBy('created_at', 'desc')->get();
         return view('admin/skm', ['dataSKM' => $dataSKM]);
     }
 
