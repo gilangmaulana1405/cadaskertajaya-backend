@@ -75,6 +75,12 @@ Route::middleware(['admin'])->group(function (){
     Route::get('/admin/skm/edit/{id}', [SKMAdminController::class, 'editSKM'])->name('skm.edit');
     Route::put('/admin/skm/{id}', [SKMAdminController::class, 'updateSKM'])->name('skm.update');
 
+    Route::get('/admin/skdDomisili/edit/{id}', [SKDDomisiliAdminController::class, 'editSKDDomisili'])->name('skdDomisili.edit');
+    Route::put('/admin/skdDomisili/{id}', [SKDDomisiliAdminController::class, 'updateSKDDomisili'])->name('skdDomisili.update');
+
+    Route::get('/admin/skdBelumMenikah/edit/{id}', [SKDBelumMenikahAdminController::class, 'editSKDBelumMenikah'])->name('skdBelumMenikah.edit');
+    Route::put('/admin/skdBelumMenikah/{id}', [SKDBelumMenikahAdminController::class, 'updateSKDBelumMenikah'])->name('skdBelumMenikah.update');
+
     // delete
     Route::delete('/admin/sku/{id}', [SKUAdminController::class, 'deleteSKU'])->name('sku.delete');
     Route::delete('/admin/skm/{id}', [SKMAdminController::class, 'deleteSKM'])->name('skm.delete');

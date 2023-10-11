@@ -21,6 +21,7 @@
                                                  <th>Jenis Kelamin</th>
                                                  <th>Alamat</th>
                                                  <th>NIK</th>
+                                                 <th>Status Kependudukan</th>
                                                  <th>Action</th>
                                              </tr>
                                          </thead>
@@ -34,8 +35,9 @@
                                                  <td>{{ $data->jenis_kelamin }}</td>
                                                  <td>{{ $data->alamat }}</td>
                                                  <td>{{ $data->nik }}</td>
+                                                 <td>{{ $data->status_kependudukan }}</td>
                                                  <td>
-                                                     <a href="" class="btn btn-warning btn-rounded btn-fw">Edit</a>
+                                                     <a href="/admin/skdDomisili/edit/{{ $data->id }}" class="btn btn-warning btn-rounded btn-fw">Edit</a>
                                                      <a href="#" data-id="{{ $data->id }}" class="btn btn-danger btn-rounded btn-fw delete-confirm-skdDomisili">Delete</a>
                                                  </td>
                                              </tr>
