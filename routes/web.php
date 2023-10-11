@@ -67,7 +67,12 @@ Route::middleware(['admin'])->group(function (){
     Route::get('/admin/sku/{id}', [SKUAdminController::class, 'detailSKU']);
     Route::get('/admin/skm/{id}', [SKMAdminController::class, 'detailSKM']);
 
-    Route::get('/admin/{id}/sku', [SKUAdminController::class, 'editSKU']);
+    // edit
+    Route::get('/admin/sku/edit/{id}', [SKUAdminController::class, 'editSKU'])->name('sku.edit');
+    Route::put('/admin/sku/{id}', [SKUAdminController::class, 'updateSKU'])->name('sku.update');
+
+    // delete
+    Route::delete('/admin/sku/{id}', [SKUAdminController::class, 'deleteSKU'])->name('sku.delete');
 });
 
 Route::get('/admin/logout', [LoginController::class, 'logout'])->name('admin.logout');
