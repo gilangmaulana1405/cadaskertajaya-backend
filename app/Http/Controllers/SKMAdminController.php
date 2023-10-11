@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\SuratKeteranganMeninggal;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SKMAdminController extends Controller
 {
@@ -24,6 +25,19 @@ class SKMAdminController extends Controller
         }
 
         return view('admin/detailSKM', ['data' => $data]);
+    }
+
+    public function editSKM($id)
+    {
+        $data = SuratKeteranganMeninggal::find($id);
+        return view('admin/editSKM', ['data' => $data]);
+    }
+
+    public function updateSKM(Request $request, $id)
+    {
+        $data = SuratKeteranganMeninggal::find($id)->update($request->all());
+        Alert::success('Success', 'Data berhasil diubah');
+        return redirect()->route('admin.skm');
     }
 
      public function deleteSKM($id)

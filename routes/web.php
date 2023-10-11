@@ -72,6 +72,9 @@ Route::middleware(['admin'])->group(function (){
     Route::get('/admin/sku/edit/{id}', [SKUAdminController::class, 'editSKU'])->name('sku.edit');
     Route::put('/admin/sku/{id}', [SKUAdminController::class, 'updateSKU'])->name('sku.update');
 
+    Route::get('/admin/skm/edit/{id}', [SKMAdminController::class, 'editSKM'])->name('skm.edit');
+    Route::put('/admin/skm/{id}', [SKMAdminController::class, 'updateSKM'])->name('skm.update');
+
     // delete
     Route::delete('/admin/sku/{id}', [SKUAdminController::class, 'deleteSKU'])->name('sku.delete');
     Route::delete('/admin/skm/{id}', [SKMAdminController::class, 'deleteSKM'])->name('skm.delete');
