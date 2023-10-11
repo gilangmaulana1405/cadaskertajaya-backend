@@ -14,14 +14,14 @@
                                      <table id="example" class="display expandable-table" style="width:100%">
                                          <thead>
                                              <tr>
-                                               <th>#</th>
-                                               <th>Tanggal</th>
-                                               <th>Nama</th>
-                                               <th>Tempat Tanggal Lahir</th>
-                                               <th>Jenis Kelamin</th>
-                                               <th>Alamat</th>
-                                               <th>NIK</th>
-                                               <th>Action</th>
+                                                 <th>#</th>
+                                                 <th>Tanggal</th>
+                                                 <th>Nama</th>
+                                                 <th>Tempat Tanggal Lahir</th>
+                                                 <th>Jenis Kelamin</th>
+                                                 <th>Alamat</th>
+                                                 <th>NIK</th>
+                                                 <th>Action</th>
                                              </tr>
                                          </thead>
                                          <tbody>
@@ -36,7 +36,7 @@
                                                  <td>{{ $data->nik }}</td>
                                                  <td>
                                                      <a href="" class="btn btn-warning btn-rounded btn-fw">Edit</a>
-                                                     <a href="" class="btn btn-danger btn-rounded btn-fw">Delete</a>
+                                                     <a href="#" data-id="{{ $data->id }}" class="btn btn-danger btn-rounded btn-fw delete-confirm-skdDomisili">Delete</a>
                                                  </td>
                                              </tr>
                                              @endforeach

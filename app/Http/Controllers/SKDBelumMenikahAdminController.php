@@ -12,4 +12,14 @@ class SKDBelumMenikahAdminController extends Controller
         $dataSKDBelumMenikah = SKDBelumMenikah::orderBy('created_at', 'desc')->get();
         return view('admin/skdBelumMenikah', ['dataSKDBelumMenikah' => $dataSKDBelumMenikah]);
     }
+
+      public function deleteSKDBelumMenikah($id)
+    {
+        $data = SKDBelumMenikah::find($id);
+        if ($data) {
+            $data->delete();
+            return response()->json(['success' => true]);
+        }
+        return response()->json(['success' => false]);
+    }
 }

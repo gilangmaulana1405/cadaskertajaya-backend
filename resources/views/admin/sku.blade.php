@@ -32,7 +32,7 @@
                                                  <td>
                                                      <a href="/admin/sku/{{ $data->id }}" class="btn btn-info btn-rounded btn-fw">Detail</a>
                                                      <a href="/admin/sku/edit/{{ $data->id }}" class="btn btn-warning btn-rounded btn-fw">Edit</a>
-                                                     <a href="#" data-id="{{ $data->id }}" class="btn btn-danger btn-rounded btn-fw delete-confirm">Delete</a>
+                                                     <a href="#" data-id="{{ $data->id }}" class="btn btn-danger btn-rounded btn-fw delete-confirm-sku">Delete</a>
                                                  </td>
                                              </tr>
                                              @endforeach

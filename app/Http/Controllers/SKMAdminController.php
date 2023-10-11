@@ -25,4 +25,14 @@ class SKMAdminController extends Controller
 
         return view('admin/detailSKM', ['data' => $data]);
     }
+
+     public function deleteSKM($id)
+    {
+        $data = SuratKeteranganMeninggal::find($id);
+        if ($data) {
+            $data->delete();
+            return response()->json(['success' => true]);
+        }
+        return response()->json(['success' => false]);
+    }
 }

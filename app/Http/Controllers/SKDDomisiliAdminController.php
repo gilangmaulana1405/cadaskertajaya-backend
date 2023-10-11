@@ -12,4 +12,13 @@ class SKDDomisiliAdminController extends Controller
         $dataSKDDomisili = SKDDomisili::orderBy('created_at', 'desc')->get();
         return view('admin/skdDomisili', ['dataSKDDomisili' => $dataSKDDomisili]);
     }
+
+    public function deleteSKDDomisili($id){
+         $data = SKDDomisili::find($id);
+        if ($data) {
+            $data->delete();
+            return response()->json(['success' => true]);
+        }
+        return response()->json(['success' => false]);
+    }
 }

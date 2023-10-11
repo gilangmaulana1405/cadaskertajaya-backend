@@ -135,9 +135,9 @@
 
     </script>
 
-    {{-- delete --}}
+    <!-- delete -->
     <script>
-        $(document).on('click', '.delete-confirm', function(e) {
+        $(document).on('click', '.delete-confirm-sku', function(e) {
             e.preventDefault();
             var id = $(this).data('id');
 
@@ -155,6 +155,135 @@
                     $.ajax({
                         type: "DELETE"
                         , url: '/admin/sku/' + id, // Ganti dengan URL yang sesuai
+                        data: {
+                            "_token": "{{ csrf_token() }}"
+                        }
+                        , success: function(data) {
+                            if (data.success) {
+                                Swal.fire(
+                                    'Terhapus!'
+                                    , 'Data telah berhasil dihapus.'
+                                    , 'success'
+                                ).then(function() {
+                                    location.reload();
+                                });
+                            } else {
+                                Swal.fire(
+                                    'Gagal!'
+                                    , 'Terjadi kesalahan saat menghapus data.'
+                                    , 'error'
+                                );
+                            }
+                        }
+                    });
+                }
+            });
+        });
+
+        $(document).on('click', '.delete-confirm-skm', function(e) {
+            e.preventDefault();
+            var id = $(this).data('id');
+
+            Swal.fire({
+                title: 'Anda yakin ingin menghapus data ini?'
+                , text: "Tindakan ini tidak dapat dibatalkan!"
+                , icon: 'warning'
+                , showCancelButton: true
+                , confirmButtonColor: '#3085d6'
+                , cancelButtonColor: '#d33'
+                , confirmButtonText: 'Ya, Hapus!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Lakukan permintaan AJAX untuk menghapus data
+                    $.ajax({
+                        type: "DELETE"
+                        , url: '/admin/skm/' + id, // Ganti dengan URL yang sesuai
+                        data: {
+                            "_token": "{{ csrf_token() }}"
+                        }
+                        , success: function(data) {
+                            if (data.success) {
+                                Swal.fire(
+                                    'Terhapus!'
+                                    , 'Data telah berhasil dihapus.'
+                                    , 'success'
+                                ).then(function() {
+                                    location.reload();
+                                });
+                            } else {
+                                Swal.fire(
+                                    'Gagal!'
+                                    , 'Terjadi kesalahan saat menghapus data.'
+                                    , 'error'
+                                );
+                            }
+                        }
+                    });
+                }
+            });
+        });
+
+        $(document).on('click', '.delete-confirm-skdDomisili', function(e) {
+
+            e.preventDefault();
+            var id = $(this).data('id');
+
+            Swal.fire({
+                title: 'Anda yakin ingin menghapus data ini?'
+                , text: "Tindakan ini tidak dapat dibatalkan!"
+                , icon: 'warning'
+                , showCancelButton: true
+                , confirmButtonColor: '#3085d6'
+                , cancelButtonColor: '#d33'
+                , confirmButtonText: 'Ya, Hapus!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Lakukan permintaan AJAX untuk menghapus data
+                    $.ajax({
+                        type: "DELETE"
+                        , url: '/admin/skdDomisili/' + id, // Ganti dengan URL yang sesuai
+                        data: {
+                            "_token": "{{ csrf_token() }}"
+                        }
+                        , success: function(data) {
+                            if (data.success) {
+                                Swal.fire(
+                                    'Terhapus!'
+                                    , 'Data telah berhasil dihapus.'
+                                    , 'success'
+                                ).then(function() {
+                                    location.reload();
+                                });
+                            } else {
+                                Swal.fire(
+                                    'Gagal!'
+                                    , 'Terjadi kesalahan saat menghapus data.'
+                                    , 'error'
+                                );
+                            }
+                        }
+                    });
+                }
+            });
+        });
+        $(document).on('click', '.delete-confirm-skdBelumMenikah', function(e) {
+            e.preventDefault();
+            var id = $(this).data('id');
+
+            Swal.fire({
+                title: 'Anda yakin ingin menghapus data ini?'
+                , text: "Tindakan ini tidak dapat dibatalkan!"
+                , icon: 'warning'
+                , showCancelButton: true
+                , confirmButtonColor: '#3085d6'
+                , cancelButtonColor: '#d33'
+                , confirmButtonText: 'Ya, Hapus!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Lakukan permintaan AJAX untuk menghapus data
+                    $.ajax({
+                        type: "DELETE"
+                        , url: '/admin/skdBelumMenikah/' + id, // Ganti dengan URL yang sesuai
                         data: {
                             "_token": "{{ csrf_token() }}"
                         }

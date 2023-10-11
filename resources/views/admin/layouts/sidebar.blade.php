@@ -39,7 +39,7 @@
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="{{ route('admin.sku') }}">SKU</a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{ route('admin.skm') }}">SKM</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="{{ route('admin.sktm') }}">SKTM</a></li>
+                    {{-- <li class="nav-item"> <a class="nav-link" href="{{ route('admin.sktm') }}">SKTM</a></li> --}}
                     <li class="nav-item"> <a class="nav-link" href="{{ route('admin.skdDomisili') }}">SKD Domisili</a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{ route('admin.skdBelumMenikah') }}">SKD Belum Menikah</a></li>
                 </ul>

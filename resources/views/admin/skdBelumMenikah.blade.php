@@ -36,7 +36,7 @@
                                                  <td>{{ $data->nik }}</td>
                                                  <td>
                                                      <a href="" class="btn btn-warning btn-rounded btn-fw">Edit</a>
-                                                     <a href="" class="btn btn-danger btn-rounded btn-fw">Delete</a>
+                                                     <a href="#" data-id="{{ $data->id }}" class="btn btn-danger btn-rounded btn-fw delete-confirm-skdBelumMenikah">Delete</a>
                                                  </td>
                                              </tr>
                                              @endforeach

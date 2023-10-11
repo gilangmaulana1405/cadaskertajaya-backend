@@ -38,7 +38,7 @@
                                                  <td>
                                                      <a href="/admin/skm/{{ $data->id }}" class="btn btn-info btn-rounded btn-fw">Detail</a>
                                                      <a href="" class="btn btn-warning btn-rounded btn-fw">Edit</a>
-                                                     <a href="" class="btn btn-danger btn-rounded btn-fw">Delete</a>
+                                                     <a href="#" data-id="{{ $data->id }}" class="btn btn-danger btn-rounded btn-fw delete-confirm-skm">Delete</a>
                                                  </td>
                                              </tr>
                                              @endforeach

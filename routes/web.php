@@ -16,6 +16,7 @@ use App\Http\Controllers\SKUAdminController;
 use App\Http\Controllers\SuratKeteranganUsahaController;
 use App\Http\Controllers\SuratKeteranganMeninggalController;
 use App\Http\Controllers\SuratKeteranganTidakMampuController;
+use App\Models\SKDDomisili;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,6 +74,9 @@ Route::middleware(['admin'])->group(function (){
 
     // delete
     Route::delete('/admin/sku/{id}', [SKUAdminController::class, 'deleteSKU'])->name('sku.delete');
+    Route::delete('/admin/skm/{id}', [SKMAdminController::class, 'deleteSKM'])->name('skm.delete');
+    Route::delete('/admin/skdDomisili/{id}', [SKDDomisiliAdminController::class, 'deleteSKDDomisili'])->name('skdDomisili.delete');
+    Route::delete('/admin/skdBelumMenikah/{id}', [SKDBelumMenikahAdminController::class, 'deleteSKDBelumMenikah'])->name('deleteSKDBelumMenikah.delete');
 });
 
 Route::get('/admin/logout', [LoginController::class, 'logout'])->name('admin.logout');
