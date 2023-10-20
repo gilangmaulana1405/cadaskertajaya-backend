@@ -28,6 +28,7 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 
+
     <!-- =======================================================
   * Template Name: Mentor - v4.7.0
   * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
@@ -39,34 +40,25 @@
 <body>
 
     <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top">
-        <div class="container d-flex align-items-center">
+    <header id="header" class="navbar navbar-light bg-light">
+        <div class="container-fluid">
 
             <h1>
-                <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+                <a href="/" class="logo d-flex align-items-center  me-auto me-lg-0">
                     <img src="https://karawangkab.go.id/sites/default/files/krw-icon.png" alt="">
                     Cadaskertajaya</a>
             </h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-            <nav id="navbar" class="navbar order-last order-lg-0">
+            <nav id="navbar" class="d-flex">
                 <ul>
                     <li><a class="active" href="/">Home</a></li>
+                    <li><a href="#profil_desa">Profil Desa</a></li>
                     <li><a href="#Pelayanan">Pelayanan Publik</a></li>
-                    <li class="dropdown"><a href="#"><span>Profil Desa</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="peta_desa.html">Peta Desa</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown"><a href="#"><span>Kelembagaan Desa</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li><a href="#">Drop Down 2</a></li>
-                        </ul>
-                    </li>
                     <li><a href="#Contant">Kontak Kami</a></li>
+                    <li><a href="/admin/login">Login</a></li>
                 </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
         </div>
     </header><!-- End Header -->
 
@@ -93,8 +85,8 @@
                             <h4>
                                 Desa Cadaskertajaya 41381<br />
                                 Indonesia <br /><br />
-                                <strong>Phone:</strong> +1 5589 55488 55<br />
-                                <strong>Email:</strong> info@example.com<br />
+                                <strong>Phone:</strong> +62 896 3737 9535<br />
+                                <strong>Email:</strong> desacadaskertajaya10@gmail.com<br />
                             </h4>
                     </div>
                 </div>
@@ -111,15 +103,8 @@
                     <!-- You can delete the links only if you purchased the pro version. -->
                     <!-- Licensing information: https://bootstrapmade.com/license/ -->
                     <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/ -->
-                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                    Designed by <a href="#">KKN Unsika</a>
                 </div>
-            </div>
-            <div class="social-links text-center text-md-right pt-3 pt-md-0">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
         </div>
     </footer>
@@ -251,13 +236,14 @@
     </div>
 </div>
 
+
 <!-- Modal SKM -->
 <div class="modal fade" id="ModelSKM" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h2>Formulir SKM</h2>
+                <h2>Formulir SKK</h2>
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -644,6 +630,135 @@
 </div>
 
 
+<!-- Modal Peta -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" id="Peta" role="dialog">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h2>Peta Desa</h2>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Modal Body -->
+            <section id="about" class="about">
+                <div class="container" data-aos="fade-up">
+
+                    <div class="row">
+                        <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15863.427821601561!2d107.41175541530366!3d-6.282528069528592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69709e8ace7cd5%3A0x9dd546e8a3ddffc0!2sCadaskertajaya%2C%20Telagasari%2C%20Karawang%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1694952257188!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                            <h3>Secara administratif wilayah Desa Cadaskertajaya Kecamatan Telagasari
+                                berbatasan dengan </h3>
+
+                            <ul>
+                                <li><i class="bi bi-check-circle"></i> Sebelah Utara : Desa Kalijaya.</li>
+                                <li><i class="bi bi-check-circle"></i> Sebelah Timur : Desa Kalibuaya dan Desa Talagamulya.</li>
+                                <li><i class="bi bi-check-circle"></i> Sebelah Selatan : Desa Cariumulya</li>
+                                <li><i class="bi bi-check-circle"></i> Sebelah Barat : Desa Cilewo.</li>
+                            </ul>
+
+                            <p>
+                                Desa Cadaskertajaya berada di daerah dataran/ pesawahan dengan ketinggian 5 m di atas permukaan laut. Berjarak 3 km dari Kota Kecamatan, 15 km dari Kota Kabupaten, 85 km dari Ibu Kota
+                                Provinsi dan 72 km dari Ibu Jakarta.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section><!-- End About Section -->
+
+
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal Sejarah -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" id="Sejarah" role="dialog">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h2>Sejarah Desa</h2>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Modal Body -->
+            <section class="about">
+                <div class="gambar-responsif">
+                    <img src="assets/img/sejarah.png" class="img-fluid" alt="" />
+                </div>
+                <div class="container-sejarah">
+                    <br>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Desa Cadaskertajaya adalah salah satu Desa dari empat belas desa yang berada di wilayah Kecamatan Telagasari Kabupaten Karawang. Cikal bakal dan awal mula terbentuknya/ berdirinya Desa Cadaskertajaya adalah hasil pemekaran/ pemecahan dari Desa Induk yakni Desa Cilewo pada tanggal 5 Maret 1981.</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pemekaran Desa Induk pada saat pemekaran itu dibagi menjadi 4 (Empat) Desa yakni terdiri dari : Desa Cadaskertajaya, Desa Ciwulan, Desa Pulosari, Desa Linggarsari. Adapun pada saat itu yang memerima penyerahan pemekaran tersebut yakni diserahterimakan kepada Pjs yang bernama M. Sartiming (sebelum adanya Kepala Desa Definitif sampai dengan Pemilihan Kepala Desa).</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pada tanggal 07 Juni 1983 Pjs dijabat oleh Empong Sapilan, dikarenakan saat itu M. Sartiming Mencalonkan sebagai Kepala Desa dan sekaligus sebagai Kepala Desa Terpilih, sehingga sejak tanggal 29 Maret 1984, M. Sartiming menjabat sebagai Kepala Desa Cadaskertajaya Definitif yang pertama terpilih.</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pertimbangan para pemangku pemerintahan dan para tokoh Masyarakat (Para Sesepuh) lintas Kampung yakni Kampung Cicadas, Cilewo dan Panyalinbanyu bahwa penempatan Kantor Desa pada saat itu dipilih yakni Dusun Cicadas Rt. 002/001 dan eksis sampai saat ini. Pemilihan tempat tersebut yang mana mengingat letaknya yang strategis yang berada di tengah-tengah dan juga diapit oleh 2 kampung yakni Kampung Cilewo dan kampung Panyalinbanyu.</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mengingat belum memiliki Nama Desa, maka para Tokoh / Sesepuh Cicadas pada saat itu berembug untuk mencari Nama Desa yang dianggap sesuai dengan kondisi, keadaan dan situasi Desa yang disesuaikan dan mengandung arti tanpa melupakan sejarah Kampung Cicadas. Nama Desa diberi nama “ Cadaskertajaya ” dimana nama tersebut diambil dari :</p>
+                    <ul>
+                        <li>Kata “Cadas” adalah berasal dari nama kampung Cicadas yang pada saat itu kontur tanah kampung Cicadas pada umumnya merupakan Cadas/Batu.</li>
+                        <li>Kata “Kertajaya” berasal dari nama “Mbah Raden Kertajaya” yakni menurut keterangan seseorang yang bisa dan cerita kokolot baheuala (orang tua zaman dulu) bahwa Mbah Raden Kertajaya adalah seorang Raden dan beliau merupakan orang yang pertama kali Bubuka (membuka) Kampung Cicadas dan merupakan karuhun (orang tua yang sudah wafat) pewaris warga asli Cicadas. Konon menurut cerita juga bahwa Mbah Raden Kertajaya beliau enggan disebut Raden yang kemudian katelah (bernama) Uyut SAMIDUN dan sampai sekarang katelah Uyut IDUN, dimana sampai saat ini terdapat makamnya yang berada di tengah-tengah lembur (kampung). Mabah Raden Kertajaya (Uyut Idun) juga sebagai orang yang mempunyai ilmu tinggi dan memiliki parabot (pusaka-pusaka), dimana pusaka-pusakanya ditimbun (dikubur) dalam tanah, yang sampai dengan saat ini timbunan (kuburan) tersebut masih ada berupa makam yang disebut Makam Panjang, yang lokasinya tepat disebelah barat Kantor Desa Cadaskertajaya.</li>
+                    </ul>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dari asal kata tersebut dengan mengacu kepada nama kampung dan kejadian sejarah (carita zaman dulu) yang terjadi di sehingga jadilah suatu Nama Desa yakni Desa “CADASKERTAJAYA” dan lokasi desanya berada di Kampung Cicadas.</p>
+                </div>
+            </section><!-- End About Section -->
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal VisiMisi -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" id="VisiMisi" role="dialog">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h2>Visi Misi Desa</h2>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Modal Body -->
+            <section id="about" class="about">
+                <div class="container" data-aos="fade-up">
+
+                    <div class="row">
+                        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                            <h3>Visi </h3>
+
+                            <ul>
+                                <li><i class="bi bi-check-circle"></i> Menjadi Desa Maju di Segala Bidang</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                            <h3>Misi </h3>
+
+                            <ul>
+                                <li><i class="bi bi-check-circle"></i> Peningkatan Bidang Pemerintahan Desa</li>
+                                <li><i class="bi bi-check-circle"></i> Peningkatan Bidang Pembangunan Desa</li>
+                                <li><i class="bi bi-check-circle"></i> Peningkatan Bidang Pembinaan Masyarakat Desa</li>
+                                <li><i class="bi bi-check-circle"></i> Peningkatan Bidang Pemberdayaan Masyarakat Desa</li>
+                                <li><i class="bi bi-check-circle"></i> Penanggulangan Bencana, Keadaan Darurat</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section><!-- End About Section -->
+
+
+
+        </div>
+    </div>
+</div>
+
+
 
 <!-- membuat inputan max 16,4,2 angka untuk field NIK ,Tahun Usaha,Umur -->
 <script>
@@ -834,3 +949,4 @@
 </script>
 
 </html>
+

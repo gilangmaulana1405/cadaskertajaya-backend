@@ -14,9 +14,8 @@
                     <img src="assets/img/SKU.png" class="img-fluid" alt="..." />
                     <div class="course-content">
                         <h3><a data-toggle="modal" data-target="#ModelSKU">SKU (Surat Keterangan Usaha)</a></h3>
-                        <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae
-                            dolores dolorem
-                            tempore.</p>
+                        <p>Surat keterangan usaha (SKU) adalah dokumen penting yang perlu dimiliki oleh para pelaku
+                            usaha untuk menyatakan jika yang bersangkutan memiliki sebuah usaha dengan aktivitas usaha yang jelas.</p>
                     </div>
                 </div>
             </div>
@@ -24,18 +23,17 @@
             {{-- SKM --}}
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-toggle="modal" data-target="#ModelSKM">
                 <div class="course-item">
-                    <img src="assets/img/SKM.png" class="img-fluid" alt="..." />
+                    <img src="assets/img/SKK.png" class="img-fluid" alt="..." />
                     <div class="course-content">
-                        <h3><a data-toggle="modal" data-target="#ModelSKM">SKM (Surat Keterangan Meninggal)</a>
+                        <h3><a data-toggle="modal" data-target="#ModelSKM">SKK (Surat Keterangan Kematian)</a>
                         </h3>
-                        <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae
-                            dolores dolorem
-                            tempore.</p>
+                        <p>Surat keterangan kematian adalah dokumen resmi yang dikeluarkan oleh desa untuk
+                            mengkonfirmasi bahwa seseorang telah meninggal dunia.</p>
                     </div>
                 </div>
             </div>
 
-            {{-- SKTM --}}
+            <!-- {{-- SKTM --}}
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-toggle="modal" data-target="#ModelSKTM">
                 <div class="course-item">
                     <img src="assets/img/SKTM.png" class="img-fluid" alt="..." />
@@ -47,17 +45,16 @@
                             tempore.</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             {{-- SKD Domisili --}}
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-toggle="modal" data-target="#ModelSKdomisili">
                 <div class="course-item">
-                    <img src="assets/img/SK_domisili.png" class="img-fluid" alt="..." />
+                    <img src="assets/img/skd_domisili.png" class="img-fluid" alt="..." />
                     <div class="course-content">
                         <h3><a data-toggle="modal" data-target="#ModelSKdomisili">SK Domisili</a></h3>
-                        <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae
-                            dolores dolorem
-                            tempore.</p>
+                        <p>Surat keterangan domisili adalah dokumen resmi yang dikeluarkan oleh pihak desa
+                            yang menunjukkan alamat tempat tinggal seseorang.</p>
                     </div>
                 </div>
             </div>
@@ -65,13 +62,12 @@
             {{-- SKD Belum Menikah --}}
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-toggle="modal" data-target="#ModelSKDBelumMenikah">
                 <div class="course-item">
-                    <img src="assets/img/SKDBelumMenikah.png" class="img-fluid" alt="..." />
+                    <img src="assets/img/skd_belummenikah.png" class="img-fluid" alt="..." />
                     <div class="course-content">
                         <h3><a data-toggle="modal" data-target="#ModelSKDBelumMenikah">SKD Belum Menikah</a>
                         </h3>
-                        <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae
-                            dolores dolorem
-                            tempore.</p>
+                        <p>Surat keterangan belum menikah adalah dokumen yang diterbitkan oleh desa,
+                            yang menyatakan bahwa seseorang belum pernah menikah.</p>
                     </div>
                 </div>
             </div>
@@ -79,3 +75,4 @@
     </div>
 </section>
 <!-- End Pelayanan Section -->
+

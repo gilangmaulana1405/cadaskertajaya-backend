@@ -354,7 +354,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 80vh;
-  background: url("../img/desa.png") top center;
+  background: url("../img/desa.jpg") top center;
   background-size: cover;
   position: relative;
 }
@@ -1435,4 +1435,225 @@ section {
 /* Tombol untuk membuka modal */
 .open-modal-button {
   cursor: pointer;
+}
+
+/* Tambahkan media query untuk ukuran layar kurang dari atau sama dengan 768px (ukuran smartphone) */
+@media (max-width: 768px) {
+  #navbar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 60px;
+    left: -100%;
+    transition: 0.3s;
+  }
+
+  #navbar ul li {
+    margin: 15px 0;
+  }
+
+  #navbar ul.navbar-show {
+    left: 0;
+  }
+
+  #navbar .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .icon-boxes .icon-box {
+    margin-bottom: 30px;
+  }
+}
+
+/* Tambahkan gaya CSS tambahan sesuai kebutuhan untuk ukuran layar smartphone */
+/* Misalnya, mengubah ukuran teks atau mengatur ulang tata letak elemen-elemen lainnya */
+
+.list-topics-content {
+  position: relative;
+  z-index: 1;
+  align-items: center;
+}
+
+.list-topics-content ul {
+  text-align: center;
+}
+
+.list-topics-content ul li {
+  display: inline-block;
+  margin: 0 10px; /* Atur margin sesuai kebutuhan Anda */
+}
+
+
+.single-list-topics-content{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 205px;
+  height: 170px;
+  background:#fff;
+  border-radius: 3px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0px 10px rgba(71,71,71,.2);
+  -webkit-transition: .3s linear; 
+  -moz-transition:.3s linear; 
+  -ms-transition:.3s linear; 
+  -o-transition:.3s linear;
+  transition: .3s linear;
+}
+.single-list-topics-content h2>a { 
+  margin: 13px 0;
+  color: #18d26e;
+}
+/*.single-list-topics-content:last-child{margin-right: 0;}*/
+
+.single-list-topics-icon [class^="flaticon-"]:before,.single-list-topics-icon [class*=" flaticon-"]:before,.single-list-topics-icon [class^="flaticon-"]:after,.single-list-topics-icon [class*=" flaticon-"]:after {font-size: 45px;color:#343a3f;}
+.single-list-topics-content:hover .single-list-topics-icon [class^="flaticon-"]:before,.single-list-topics-content:hover .single-list-topics-icon [class*=" flaticon-"]:before,.single-list-topics-content:hover .single-list-topics-icon [class^="flaticon-"]:after,.single-list-topics-content:hover .single-list-topics-icon [class*=" flaticon-"]:after {color:#fff;}
+
+.single-list-topics-content:hover h2>a,.single-list-topics-content:hover p{color: #fff!important;}
+.single-list-topics-content:hover{
+  color: #fff;
+  background:#a0ae9c;
+  box-shadow: 0 5px 10px rgba(71,71,71,.4);
+}
+
+.gambar-responsif {
+  max-width: 100%;
+  height: 300;
+  text-align: justify;
+}
+
+@media (max-width: 250) {
+  .gambar-responsif {
+      max-width: 80%;
+  }
+}
+
+.container-sejarah{
+  text-align: justify;
+}
+
+.ikon-responsif {
+  max-width: 60%;
+  height: 300;
+  text-align: justify;
+}
+
+@media (max-width: 250) {
+  .ikon-responsif {
+      max-width: 40%;
+  }
+}.list-topics-content {
+  position: relative;
+  z-index: 1;
+  align-items: center;
+}
+
+.list-topics-content ul {
+  text-align: center;
+}
+
+.list-topics-content ul li {
+  display: inline-block;
+  margin: 0 10px; /* Atur margin sesuai kebutuhan Anda */
+}
+
+
+.single-list-topics-content{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 205px;
+  height: 170px;
+  background:#fff;
+  border-radius: 3px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0px 10px rgba(71,71,71,.2);
+  -webkit-transition: .3s linear; 
+  -moz-transition:.3s linear; 
+  -ms-transition:.3s linear; 
+  -o-transition:.3s linear;
+  transition: .3s linear;
+}
+.single-list-topics-content h2>a { 
+  margin: 13px 0;
+  color: #18d26e;
+}
+/*.single-list-topics-content:last-child{margin-right: 0;}*/
+
+.single-list-topics-content {
+    position: relative;
+}
+
+.single-list-topics-icon [class="flaticon-"]:before,
+.single-list-topics-icon [class=" flaticon-"]:before,
+.single-list-topics-icon [class="flaticon-"]:after,
+.single-list-topics-icon [class=" flaticon-"]:after {
+    font-size: 45px;
+    color: #343a3f;
+    transition: color 0.3s ease; /* Efek transisi untuk perubahan warna */
+}
+
+.single-list-topics-content:hover .single-list-topics-icon [class="flaticon-"]:before,
+.single-list-topics-content:hover .single-list-topics-icon [class="flaticon-"]:before,
+.single-list-topics-content:hover .single-list-topics-icon [class="flaticon-"]:after,
+.single-list-topics-content:hover .single-list-topics-icon [class="flaticon-"]:after {
+    color: #fff; /* Warna berubah saat dihover */
+}
+
+.single-list-topics-content:hover h2 > a,
+.single-list-topics-content:hover p {
+    color: #fff !important; /* Warna teks h2 > a dan p berubah saat dihover */
+}
+
+.single-list-topics-content:hover{
+  color: #fff;
+  background:#a0ae9c;
+  box-shadow: 0 5px 10px rgba(71,71,71,.4);
+}
+
+.gambar-responsif {
+  max-width: 100%;
+  height: 300;
+  text-align: justify;
+}
+
+@media (max-width: 250) {
+  .gambar-responsif {
+      max-width: 80%;
+  }
+}
+
+.container-sejarah{
+  text-align: justify;
+}
+
+.ikon-responsif {
+  max-width: 60%;
+  height: 300;
+  text-align: justify;
+}
+
+@media (max-width: 250) {
+  .ikon-responsif {
+      max-width: 40%;
+  }
 }
