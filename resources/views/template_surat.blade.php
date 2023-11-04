@@ -79,7 +79,7 @@
         <table border="0" align="center">
             <tr>
                 <td>
-                    <font size="3"><strong>Agung Susilo</strong></font>
+                    <font size="3"><strong>{{ $data['nama_dospem'] }}</strong></font>
                 </td>
             </tr>
         </table>
@@ -103,7 +103,7 @@
                     <font size="3">Nama</font>
                 </td>
                 <td>
-                    <font size="3">: Gilang Maulana</font>
+                    <font size="3">: {{ $data['nama_mhs'] }}</font>
                 </td>
             </tr>
             <tr>
@@ -111,7 +111,7 @@
                     <font size="3">NPM</font>
                 </td>
                 <td>
-                    <font size="3">: 2010631170075</font>
+                    <font size="3">: {{ $data['npm'] }}</font>
                 </td>
             </tr>
             <tr>
@@ -119,7 +119,7 @@
                     <font size="3">Program Studi</font>
                 </td>
                 <td>
-                    <font size="3">: Informatika</font>
+                    <font size="3">: {{ $data['prodi'] }}</font>
                 </td>
             </tr>
             <tr>
@@ -127,8 +127,7 @@
                     <font size="3">Topik Utama</font>
                 </td>
                 <td>
-                    <font size="3">: Implementasi Framework Laravel dalam Sistem Informasi Pengelolaan Surat
-                        Administrasi Mahasiswa (Studi Kasus : TU Fasilkom Unsika)</font>
+                    <font size="3">: {{ $data['judul_skripsi'] }}</font>
                 </td>
             </tr>
         </table>
