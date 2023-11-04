@@ -7,6 +7,7 @@ use App\Models\SKDDomisili;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
+
 class SKDDomisiliController extends Controller
 {
     public function index() {

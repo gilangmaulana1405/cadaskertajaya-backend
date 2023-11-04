@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>Cadaskertajaya</title>
@@ -629,6 +629,64 @@
     </div>
 </div>
 
+{{-- Modal Surat Tugas --}}
+<div class="modal fade" id="ModelSuratTugas" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h2>Formulir Surat Tugas</h2>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <form action="{{ route('surattugas.create') }}" method="POST" id="formSuratTugas">
+                    @csrf
+                    <p class="statusMsg"></p>
+                    <div>
+                        <h4>Yang bertanda tangan dibawah ini, menerangkan bahwa:</h4>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputNama">Nama Mahasiswa</label>
+                        <input type="text" class="form-control alphabet-input" name="nama_mhs" id="inputNama" placeholder="Masukan nama" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputNpm">NPM</label>
+                        <input type="text" class="form-control numeric-input npm" name="npm" placeholder="Masukan NPM" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputProgramStudi">Program Studi</label>
+                        <input type="text" class="form-control" name="prodi" id="inputProgramStudi" placeholder="Masukan program studi" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputNamaDosenPembimbing">Nama Dosen Pembimbing</label>
+                        <select class="form-select" name="nama_dospem" aria-label="Default select example">
+                            <option value="Agung Susilo">Agung Susilo</option>
+                            <option value="Carudin">Carudin</option>
+                            <option value="Betha Nurina Sari">Betha Nurina Sari</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputJudulSkirpsi">Judul Skirpsi</label>
+                        <input type="text" class="form-control alphabet-input" name="judul_skripsi" id="inputJudulSkirpsi" placeholder="Masukan judul skripsi" required />
+                    </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">SUBMIT</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 
 <!-- Modal Peta -->
 <div class="modal fade bd-example-modal-lg" tabindex="-1" id="Peta" role="dialog">
@@ -713,7 +771,6 @@
 </div>
 
 
-
 <!-- Modal VisiMisi -->
 <div class="modal fade bd-example-modal-lg" tabindex="-1" id="VisiMisi" role="dialog">
     <div class="modal-dialog modal-xl">
@@ -766,6 +823,7 @@
         let inputNIK = document.querySelectorAll('.nik');
         let inputTahunUsaha = document.querySelectorAll('.tahunUsaha');
         let inputUmur = document.querySelectorAll('.umur');
+        let inputNPM = document.querySelectorAll('.npm');
 
         inputNIK.forEach(function(input) {
             input.addEventListener("input", function() {
@@ -813,6 +871,24 @@
                 // Batasi panjang string menjadi 2 karakter
                 if (validValue.length > 2) {
                     validValue = validValue.slice(0, 2);
+                }
+
+                // Setel nilai input dengan string yang sudah valid
+                input.value = validValue;
+
+            });
+        });
+
+        inputNPM.forEach(function(input) {
+            input.addEventListener("input", function() {
+                let inputValue = input.value;
+
+                // Hapus karakter yang tidak valid
+                let validValue = inputValue.replace(/[^0-9]/g, '');
+
+                // Batasi panjang string menjadi 13 karakter
+                if (validValue.length > 13) {
+                    validValue = validValue.slice(0, 13);
                 }
 
                 // Setel nilai input dengan string yang sudah valid
@@ -949,4 +1025,3 @@
 </script>
 
 </html>
-

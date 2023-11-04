@@ -16,6 +16,7 @@ use App\Http\Controllers\SKUAdminController;
 use App\Http\Controllers\SuratKeteranganUsahaController;
 use App\Http\Controllers\SuratKeteranganMeninggalController;
 use App\Http\Controllers\SuratKeteranganTidakMampuController;
+use App\Http\Controllers\SuratTugasController;
 use App\Models\SKDDomisili;
 
 /*
@@ -51,9 +52,20 @@ use App\Models\SKDDomisili;
     Route::get('/skdbelummenikah', [SKDBelumMenikahController::class, 'index']);
     Route::post('/skdbelummenikah', [SKDBelumMenikahController::class, 'create'])->name('skdbelummenikah.create');
 
+    Route::get('/surattugas', [SuratTugasController::class, 'index']);
+    Route::post('/surattugas', [SuratTugasController::class, 'create'])->name('surattugas.create');
+
     // login admin
     Route::get('/admin/login', [LoginController::class, 'index'])->name('admin.index');
     Route::post('/admin/login', [LoginController::class, 'login'])->name('admin.login');
+
+    Route::get('/check-gd', function () {
+    if (extension_loaded('gd') && function_exists('gd_info')) {
+        return "GD extension is installed and active.";
+    } else {
+        return "GD extension is not installed or not active.";
+    }
+});
 
 
 Route::middleware(['admin'])->group(function (){

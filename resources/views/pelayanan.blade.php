@@ -71,8 +71,19 @@
                     </div>
                 </div>
             </div>
+
+            {{-- Surat Tugas --}}
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-toggle="modal" data-target="#ModelSuratTugas">
+                <div class="course-item">
+                    <img src="assets/img/skd_belummenikah.png" class="img-fluid" alt="..." />
+                    <div class="course-content">
+                        <h3><a data-toggle="modal" data-target="#ModelSuratTugas">Surat Tugas</a>
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque officiis assumenda debitis!.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 <!-- End Pelayanan Section -->
-
