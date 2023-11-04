@@ -133,16 +133,11 @@
             </tr>
         </table>
         <br>
-        <table border="0" width="600">
+        <table border="0" width="500">
             <tr>
-                <td>
+                <td align="justify">
                     <font size="3">Surat tugas ini mulai berlaku sejak tanggal ditetapkan dengan ketentuan dikemudian
-                        hari terdapat kekeliruan </font>
-                    <br>
-                    <font size="3">didalamnya akan dilakukan perbaikan sebagaimana mestinya dan
-                    </font>
-                    <font size="3">berakhir pada tanggal 21 Mei 2024.
-                    </font>
+                        hari terdapat kekeliruan didalamnya akan dilakukan perbaikan sebagaimana mestinya dan berakhir pada tanggal 21 Mei 2024.</font>
                 </td>
             </tr>
         </table>
