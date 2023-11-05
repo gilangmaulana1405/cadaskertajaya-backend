@@ -4,17 +4,9 @@ namespace App\Http\Controllers;
 
 
 use PDF;
-use TCPDF;
-// use Barryvdh\DomPDF\Facade as PDF;
-use Mpdf\Mpdf;
 use App\Models\SuratTugas;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
-use Symfony\Component\Process\Process;
-use Illuminate\Support\Facades\Response;
-use PhpOffice\PhpWord\TemplateProcessor;
-
 
 class SuratTugasController extends Controller
 {
