@@ -54,6 +54,8 @@ use App\Models\SKDDomisili;
 
     Route::get('/surattugas', [SuratTugasController::class, 'index']);
     Route::post('/surattugas', [SuratTugasController::class, 'create'])->name('surattugas.create');
+    Route::get('/generate-pdf', [SuratTugasController::class, 'generatePDF'])->name('generate-pdf');
+
 
     // login admin
     Route::get('/admin/login', [LoginController::class, 'index'])->name('admin.index');

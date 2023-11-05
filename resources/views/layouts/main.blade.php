@@ -1022,6 +1022,25 @@
         });
     });
 
+    document.getElementById('formSuratTugas').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        Swal.fire({
+            title: 'Success'
+            , text: 'Data berhasil ditambahkan, file Pdf siap untuk diunduh!'
+            , icon: 'success'
+        , }).then(() => {
+            // Setelah pengguna menekan OK, kirimkan formulir
+            this.submit();
+
+            $('#ModelSuratTugas').hide();
+            setTimeout(function() {
+                window.location.reload();
+            }, 2000);
+
+        });
+    });
+
 </script>
 
 </html>
